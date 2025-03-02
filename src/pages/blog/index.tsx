@@ -4,6 +4,7 @@ import Articles from '@/components/blog/Articles';
 import SignupCTA from '@/components/blog/SignupCTA';
 
 export default function Blog() {
+  
   // This would typically come from your data file or CMS
   const featuredArticle = {
     title: "Christopher Mwalimo: My experience from being an attachee to working at Swahilipot Hub Foundation",
