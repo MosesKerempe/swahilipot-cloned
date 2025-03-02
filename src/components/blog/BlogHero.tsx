@@ -4,7 +4,7 @@ export default function BlogHero() {
       <div className="container-custom mx-auto">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            SwahiliPot Hub Blog
+            SwahiliPot Hub Blogs and News
           </h1>
           <p className="text-xl mb-8">
             Stories, insights, and updates from our community of innovators, creators, and change-makers.

@@ -17,7 +17,7 @@ export default function SignupCTA() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Stay Updated</h2>
           <p className="text-lg mb-8">
-            Subscribe to our newsletter to receive the latest updates, stories, and events from SwahiliPot Hub.
+            Subscribe to our newsletter to receive the latest updates, stories, and events from SwahiliPot Hub Foundation.
           </p>
           
           {isSubmitted ? (
