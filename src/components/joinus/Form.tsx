@@ -7,44 +7,70 @@ export default function Form() {
     email: '',
     phone: '',
     interest: '',
-    membershipType: 'regular',
     message: '',
-    agreeTerms: false
+    agreeTerms: false,
   });
-  
+
   const [isSubmitted, setIsSubmitted] = useState(false);
-  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
-    
+
     if (type === 'checkbox') {
+      // Explicitly cast to HTMLInputElement here
       const target = e.target as HTMLInputElement;
       setFormData({
         ...formData,
-        [name]: target.checked
+        [name]: target.checked,  // Now TypeScript knows target is an HTMLInputElement
       });
     } else {
       setFormData({
         ...formData,
-        [name]: value
+        [name]: value,
       });
     }
   };
-  
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically handle the form submission
-    // For now, we'll just show a success message
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        setError(data.message || 'There was an issue with your submission.');
+        alert('There was an issue with your submission. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setError('An error occurred while sending your form. Please try again later.');
+      alert('An error occurred while sending your form. Please try again later.');
+    }
+
+    setIsSubmitting(false);
   };
 
   const interests = [
-    "Technology",
-    "Arts & Culture",
-    "Entrepreneurship",
-    "Community Development",
-    "Education",
-    "Other"
+    'Technology',
+    'Arts & Culture',
+    'Entrepreneurship',
+    'Community Development',
+    'Education',
+    'Other',
   ];
 
   return (
@@ -53,7 +79,7 @@ export default function Form() {
         <div className="max-w-3xl mx-auto">
           <div className="bg-white p-8 rounded-lg shadow-md">
             <h2 className="text-3xl font-bold mb-6 text-center">Join Our Community</h2>
-            
+
             {isSubmitted ? (
               <div className="text-center">
                 <div className="text-5xl text-primary mb-4">✓</div>
@@ -67,62 +93,63 @@ export default function Form() {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-gray-700 font-medium mb-2">First Name *</label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="lastName" className="block text-gray-700 font-medium mb-2">Last Name *</label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                      required
-                    />
-                  </div>
+                {/* First Name */}
+                <div className="mb-4">
+                  <label htmlFor="firstName" className="block text-gray-700 font-medium mb-2">First Name *</label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required
+                  />
                 </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email *</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
-                  </div>
+
+                {/* Last Name */}
+                <div className="mb-4">
+                  <label htmlFor="lastName" className="block text-gray-700 font-medium mb-2">Last Name *</label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required
+                  />
                 </div>
-                
-                <div className="mb-6">
+
+                {/* Email */}
+                <div className="mb-4">
+                  <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required
+                  />
+                </div>
+
+                {/* Phone Number */}
+                <div className="mb-4">
+                  <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+
+                {/* Area of Interest */}
+                <div className="mb-4">
                   <label htmlFor="interest" className="block text-gray-700 font-medium mb-2">Area of Interest *</label>
                   <select
                     id="interest"
@@ -140,38 +167,9 @@ export default function Form() {
                     ))}
                   </select>
                 </div>
-                
-                <div className="mb-6">
-                  <label className="block text-gray-700 font-medium mb-2">Membership Type *</label>
-                  <div className="flex space-x-6">
-                    <label className="flex items-center">
-                      <input
-                        type="radio"
-                        name="membershipType"
-                        value="regular"
-                        checked={formData.membershipType === 'regular'}
-                        onChange={handleChange}
-                        className="mr-2"
-                        required
-                      />
-                      <span>Regular (Free)</span>
-                    </label>
-                    
-                    <label className="flex items-center">
-                      <input
-                        type="radio"
-                        name="membershipType"
-                        value="premium"
-                        checked={formData.membershipType === 'premium'}
-                        onChange={handleChange}
-                        className="mr-2"
-                      />
-                      <span>Premium (KES 1,000/month)</span>
-                    </label>
-                  </div>
-                </div>
-                
-                <div className="mb-6">
+
+                {/* Message */}
+                <div className="mb-4">
                   <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Tell us about yourself</label>
                   <textarea
                     id="message"
@@ -183,7 +181,8 @@ export default function Form() {
                     placeholder="Share your background, skills, and what you hope to achieve by joining SwahiliPot Hub."
                   ></textarea>
                 </div>
-                
+
+                {/* Terms and Conditions Checkbox */}
                 <div className="mb-6">
                   <label className="flex items-start">
                     <input
@@ -199,12 +198,22 @@ export default function Form() {
                     </span>
                   </label>
                 </div>
-                
+
+                {/* Submit Button */}
                 <div className="text-center">
-                  <button type="submit" className="btn px-8 py-3">
-                    Submit Application
+                  <button
+                    type="submit"
+                    className="btn px-8 py-3"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Submit Application'}
                   </button>
                 </div>
+
+                {/* Error Message */}
+                {error && (
+                  <div className="text-center text-red-500 mt-4">{error}</div>
+                )}
               </form>
             )}
           </div>

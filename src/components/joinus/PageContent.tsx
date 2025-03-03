@@ -33,11 +33,12 @@ export default function PageContent() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-orange-100"> {/* Changed background color to duller orange */}
       <div className="container-custom mx-auto">
         <div className="max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-center">Why Join SwahiliPot Hub?</h2>
-          <p className="text-lg text-gray-700 text-center">
+          {/* Reduced font sizes by 20% */}
+          <h2 className="text-2xl font-bold mb-6 text-center">Why Join SwahiliPot Hub?</h2> {/* Adjusted font size */}
+          <p className="text-base text-gray-700 text-center"> {/* Adjusted font size */}
             SwahiliPot Hub offers a unique environment where technology, arts, and culture intersect. As a member, you'll have access to resources, opportunities, and a community that supports your growth and development.
           </p>
         </div>
@@ -45,66 +46,11 @@ export default function PageContent() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {benefits.map((benefit, index) => (
             <div key={index} className="bg-light p-8 rounded-lg">
-              <div className="text-4xl mb-4">{benefit.icon}</div>
-              <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-              <p className="text-gray-700">{benefit.description}</p>
+              <div className="text-3xl mb-4">{benefit.icon}</div> {/* Adjusted icon size */}
+              <h3 className="text-lg font-semibold mb-3">{benefit.title}</h3> {/* Reduced font size */}
+              <p className="text-gray-700 text-sm">{benefit.description}</p> {/* Reduced font size */}
             </div>
           ))}
-        </div>
-        
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-center">Membership Options</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white border border-gray-200 p-8 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2">Regular Membership</h3>
-              <div className="text-3xl font-bold text-primary mb-4">Free</div>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>Access to community events</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>Basic use of facilities</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>Participation in select programs</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>Community newsletter</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div className="bg-primary text-white p-8 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2">Premium Membership</h3>
-              <div className="text-3xl font-bold mb-4">KES 1,000/month</div>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <span className="text-white mr-2">✓</span>
-                  <span>All Regular benefits</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white mr-2">✓</span>
-                  <span>Priority access to facilities</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white mr-2">✓</span>
-                  <span>Exclusive workshops and events</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white mr-2">✓</span>
-                  <span>One-on-one mentorship</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white mr-2">✓</span>
-                  <span>Discounts on paid programs</span>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     </section>
