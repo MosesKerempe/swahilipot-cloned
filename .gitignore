@@ -1,2 +1,20 @@
 node_modules
 .next/static/webpack/*.hot-update.json
+.env
+.env.local
+
+# Ignore Next.js build folder
+.next/
+
+# Ignore cache folder
+cache/
+
+# Ignore server folder
+server/
+
+# Ignore static folder
+static/
+
+# Ignore trace folder
+trace/
+
