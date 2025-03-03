@@ -1,16 +1,16 @@
 export default function Numbers() {
   const stats = [
-    { number: "10,000+", label: "Youth Impacted" },
-    { number: "500+", label: "Events Hosted" },
-    { number: "50+", label: "Partners" },
-    { number: "5+", label: "Years of Impact" }
+    { number: "4,000+", label: "Community Members" },
+    { number: "100+", label: "Events Hosted" },
+    { number: "25", label: "Programs and Activities" },
+    { number: "65%", label: "of our members are Youths" }
   ];
 
   return (
     <section className="py-16 bg-primary text-white">
       <div className="container-custom mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Our Impact in Numbers</h2>
+          <h2 className="text-3xl font-bold mb-4">Swahilipot Hub in Numbers</h2>
           <p className="text-lg max-w-3xl mx-auto">
             Since our inception, we've made significant strides in empowering youth across East Africa.
           </p>

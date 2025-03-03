@@ -7,15 +7,15 @@ export default function FAQS() {
   const faqs = [
     {
       question: "What is SwahiliPot Hub?",
-      answer: "SwahiliPot Hub is a collaborative space for technology, arts, and culture in Mombasa, Kenya. We provide resources, mentorship, and opportunities for youth to develop skills, innovate, and create positive change in their communities."
+      answer: "SwahiliPot Hub is an innovation and technology hub locate in Mombasa, Kenya. It serves as a community-driven space that promotes technology, entrepreneurship, and skills development in the coastla region of Kenya."
     },
     {
-      question: "How can I join SwahiliPot Hub?",
-      answer: "You can join SwahiliPot Hub by visiting our facility in Mombasa, registering on our website, or attending one of our events. We welcome individuals of all backgrounds who are interested in technology, arts, and community development."
+      question: "Who can benefit from SwahiliPot Hub?",
+      answer: "Swahilipot Hub is open to entterpreneurs, developers, creatives and anyone intrested in technology and innovation. It caters to individuals who are looking to enahance their digital skills, collaborate on projects, and connect with like-minded individuals in the tech ecosystem"
     },
     {
-      question: "What programs does SwahiliPot Hub offer?",
-      answer: "We offer a variety of programs including coding bootcamps, arts workshops, entrepreneurship training, mentorship programs, and community events. Our specific programs include Swahili Tech Women, Case Management, Campus Ambassador Program, and more."
+      question: "What programs and services does SwahiliPot Hub offer?",
+      answer: "Swahilipot hub offers a range of programs and services, including training workshops, mentorship programs, networking events, access to co-working spaces, and maker labs. These initiatives aim to empower individuals by providing them with the neccesary resources and skills to participate in the digital economy."
     },
     {
       question: "Is SwahiliPot Hub only for tech enthusiasts?",
@@ -26,8 +26,8 @@ export default function FAQS() {
       answer: "You can support us by volunteering, becoming a mentor, partnering with us on projects, sponsoring our programs, or making a donation. Every contribution helps us expand our impact and reach more youth in East Africa."
     },
     {
-      question: "Do I need to pay to use SwahiliPot Hub facilities?",
-      answer: "Many of our resources and events are free for community members. Some specialized programs or workshops may have a nominal fee to cover costs. We strive to keep our services accessible to all, regardless of financial background."
+      question: "Can I visit Swahilipot Hub as a visitor?",
+      answer: "Yes, Swahilipot HUb welcomes visitors who are interested in learning more about their initiatives and the local tech echosystem.You can visit the hub to attend events, participate in workshops, or simply network with professionals in the field. Swahilipot Hub promotes an inclusive and vibrant community where individuals can exchange ideas and explore opprotunities in technology and innovation."
     }
   ];
 
@@ -49,7 +49,7 @@ export default function FAQS() {
           {faqs.map((faq, index) => (
             <div key={index} className="mb-4">
               <button
-                className="flex justify-between items-center w-full p-5 bg-light rounded-lg hover:bg-gray-200 transition-colors"
+                className="flex justify-between items-center w-full p-5 bg-light rounded-lg hover:bg-blue-200 transition-colors"
                 onClick={() => toggleFAQ(index)}
               >
                 <span className="font-semibold text-left">{faq.question}</span>
@@ -64,7 +64,7 @@ export default function FAQS() {
               </button>
               
               {openIndex === index && (
-                <div className="p-5 border border-gray-200 border-t-0 rounded-b-lg bg-white">
+                <div className="p-5 border border-blue-200 border-t-0 rounded-b-lg bg-white">
                   <p className="text-gray-700">{faq.answer}</p>
                 </div>
               )}
