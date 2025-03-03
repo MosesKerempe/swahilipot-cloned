@@ -25,8 +25,12 @@ function ArticleCard({ title, excerpt, author, date, image, slug, category }: Ar
           <span className="text-sm text-primary font-medium">{date}</span>
           <span className="text-xs bg-light px-2 py-1 rounded-full">{category}</span>
         </div>
-        <h3 className="text-xl font-semibold mb-3">{title}</h3>
-        <p className="text-gray-600 mb-4">{excerpt}</p>
+        <h3 className="text-xl md:text-2xl font-semibold mb-3"> {/* Reduced by 30% */}
+          {title}
+        </h3>
+        <p className="text-base md:text-lg text-gray-600 mb-4"> {/* Reduced by 30% */}
+          {excerpt}
+        </p>
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <div className="w-8 h-8 rounded-full bg-gray-200 mr-2"></div>
@@ -50,65 +54,39 @@ export default function Articles() {
   // All articles in a single array
   const articles = [
     {
-      title: "How Technology is Transforming East African Communities",
-      excerpt: "Exploring the impact of digital innovation on local communities and economies in East Africa.",
-      author: "John Doe",
-      date: "March 15, 2025",
-      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      title: "Visual Studio Code Setup: Unleash Your Coding Creativity",
+      excerpt: "Visual Studio Code Setup: Unleash Your Coding Creativity.",
+      author: "Aron Wanje",
+      date: "April 30, 2024",
+      image: "/images/vscode.jpg",
       slug: "technology-transforming-east-africa",
       category: "Technology"
     },
     {
-      title: "The Rise of Women in Tech: SwahiliPot's Impact",
+      title: "Swahili Tech Women(STW)",
       excerpt: "How our Swahili Tech Women program is helping bridge the gender gap in technology fields.",
-      author: "Jane Smith",
-      date: "March 10, 2025",
-      image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      author: "Rosa Ndinda",
+      date: "April 22, 2024",
+      image: "/images/womentech.jpg",
       slug: "women-in-tech-swahilipot-impact",
       category: "Women in Tech"
     },
     {
-      title: "Preserving Cultural Heritage Through Digital Means",
-      excerpt: "How technology is being used to document and preserve traditional Swahili culture for future generations.",
-      author: "Mary Johnson",
-      date: "March 5, 2025",
-      image: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      slug: "preserving-culture-through-digital",
-      category: "Arts & Culture"
+      title: "Industrial Attachment Applications at Swahilipot Hub Foundation",
+      excerpt: "Industrial Attachment Applications at Swahilipot Hub Foundation",
+      author: "Chris Achinga",
+      date: "April 4, 2024",
+      image:"/images/attach.jpeg",
+      slug: "IDUSTRIAL-attachment",
+      category: "Indusrial Attachment"
     },
-    {
-      title: "Youth Innovation: Success Stories from Our Hub",
-      excerpt: "Highlighting the achievements of young entrepreneurs who started their journey at SwahiliPot Hub.",
-      author: "David Mwangi",
-      date: "February 28, 2025",
-      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      slug: "youth-innovation-success-stories",
-      category: "Success Stories"
-    },
-    {
-      title: "The Future of Education in East Africa",
-      excerpt: "How digital learning and skills development are reshaping educational opportunities for youth.",
-      author: "Sarah Ochieng",
-      date: "February 20, 2025",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      slug: "future-education-east-africa",
-      category: "Education"
-    },
-    {
-      title: "Building Sustainable Tech Communities",
-      excerpt: "Lessons learned from creating and nurturing a thriving technology ecosystem in Mombasa.",
-      author: "Robert Kimani",
-      date: "February 15, 2025",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      slug: "building-sustainable-tech-communities",
-      category: "Community"
-    }
+    
   ];
 
   return (
-    <section className="py-16 bg-light">
+    <section className="py-16 bg-orange-100"> {/* Dull orange background */}
       <div className="container-custom mx-auto">
-        {/* Display all 6 articles in a single grid */}
+        {/* Display all 3 articles in a single grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {articles.map((article, index) => (
             <ArticleCard

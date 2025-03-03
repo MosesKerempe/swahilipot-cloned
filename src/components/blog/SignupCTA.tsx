@@ -3,12 +3,40 @@ import { useState } from 'react';
 export default function SignupCTA() {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically handle the form submission
-    // For now, we'll just show a success message
-    setIsSubmitted(true);
+    
+    // Basic validation for email
+    if (!email) {
+      setError('Please enter a valid email.');
+      return;
+    }
+
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        throw new Error('There was an error while submitting the form.');
+      }
+    } catch (err) {
+      setError('Something went wrong, please try again later.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -37,11 +65,12 @@ export default function SignupCTA() {
                 required
               />
               <button type="submit" className="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors">
-                Subscribe
+                {isLoading ? 'Submitting...' : 'Subscribe'}
               </button>
             </form>
           )}
           
+          {error && <p className="text-sm mt-4 text-red-500">{error}</p>}
           <p className="text-sm mt-4 text-white text-opacity-80">
             We respect your privacy. Unsubscribe at any time.
           </p>
