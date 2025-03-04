@@ -2,7 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/spaces/community-space": "pages/spaces/community-space.js",
   "/": "pages/index.js",
-  "/joinus": "pages/joinus.js",
-  "/contact": "pages/contact.js"
+  "/404": "pages/404.js",
+  "/spfm": "pages/spfm.js",
+  "/programs/events": "pages/programs/events.js"
 }
