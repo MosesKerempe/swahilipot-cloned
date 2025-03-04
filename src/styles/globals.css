@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+/* In your global CSS file (e.g., global.css) */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
@@ -34,14 +41,17 @@ body {
 }
 
 @layer components {
+  /* Button Style */
   .btn {
     @apply px-4 py-2 bg-primary text-white rounded-md hover:bg-blue-600 transition-colors;
   }
 
+  /* Custom Container */
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* Dropdown Menu Style */
   .dropdown-menu {
     @apply absolute z-10 mt-2 w-48 rounded-md shadow-lg ring-1 ring-black ring-opacity-5;
     background-color: var(--light-color); /* Default light mode */
@@ -51,6 +61,7 @@ body {
     background-color: var(--dark-color); /* Correct dark mode color */
   }
 
+  /* Dropdown Item Style */
   .dropdown-item {
     @apply block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700;
   }
@@ -74,7 +85,7 @@ body {
   );
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
 }
