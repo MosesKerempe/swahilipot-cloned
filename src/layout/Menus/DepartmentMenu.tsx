@@ -25,8 +25,10 @@ export default function DepartmentMenu() {
   return (
     <div className="relative" ref={menuRef}>
       <button
-        className="flex items-center space-x-1 hover:text-primary dark:hover:text-blue-400"
+        className="flex items-center space-x-2 hover:text-primary dark:hover:text-blue-400 transition-all duration-300"
         onClick={toggleMenu}
+        aria-expanded={isOpen ? 'true' : 'false'}
+        aria-controls="department-menu"
       >
         <span>Departments</span>
         <svg
@@ -41,21 +43,49 @@ export default function DepartmentMenu() {
       </button>
 
       {isOpen && (
-        <div className="dropdown-menu">
+        <div
+          id="department-menu"
+          className="absolute left-0 mt-2 w-48 bg-white dark:bg-dark-color shadow-lg rounded-lg border border-gray-200 dark:border-gray-700 z-10 transition-all duration-300"
+        >
           <div className="py-1" role="menu" aria-orientation="vertical">
-            <Link href="/departments/engineering" className="dropdown-item" role="menuitem">
+            <Link
+              href="/departments/engineering"
+              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
+              role="menuitem"
+              onClick={() => setIsOpen(false)} // Close menu on link click (mobile)
+            >
               Engineering
             </Link>
-            <Link href="/departments/technology" className="dropdown-item" role="menuitem">
+            <Link
+              href="/departments/technology"
+              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
+              role="menuitem"
+              onClick={() => setIsOpen(false)} // Close menu on link click (mobile)
+            >
               Technology
             </Link>
-            <Link href="/departments/communications" className="dropdown-item" role="menuitem">
+            <Link
+              href="/departments/communications"
+              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
+              role="menuitem"
+              onClick={() => setIsOpen(false)} // Close menu on link click (mobile)
+            >
               Communications
             </Link>
-            <Link href="/departments/community" className="dropdown-item" role="menuitem">
+            <Link
+              href="/departments/community"
+              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
+              role="menuitem"
+              onClick={() => setIsOpen(false)} // Close menu on link click (mobile)
+            >
               Community
             </Link>
-            <Link href="/departments/creatives" className="dropdown-item" role="menuitem">
+            <Link
+              href="/departments/creatives"
+              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
+              role="menuitem"
+              onClick={() => setIsOpen(false)} // Close menu on link click (mobile)
+            >
               Creatives
             </Link>
           </div>

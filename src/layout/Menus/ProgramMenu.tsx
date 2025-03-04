@@ -10,11 +10,6 @@ export default function ProgramMenu() {
   };
 
   useEffect(() => {
-    /**
-     * Handle click outside of menu.
-     *
-     * @param {MouseEvent} event The mouse event.
-     */
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setIsOpen(false);
@@ -30,8 +25,10 @@ export default function ProgramMenu() {
   return (
     <div className="relative" ref={menuRef}>
       <button
-        className="flex items-center space-x-1 hover:text-primary dark:hover:text-blue-400"
+        className="flex items-center space-x-1 hover:text-primary dark:hover:text-blue-400 transition-all duration-300"
         onClick={toggleMenu}
+        aria-expanded={isOpen ? 'true' : 'false'}
+        aria-controls="program-menu"
       >
         <span>Programs</span>
         <svg
@@ -46,47 +43,56 @@ export default function ProgramMenu() {
       </button>
 
       {isOpen && (
-        <div className="dropdown-menu w-64">
+        <div
+          id="program-menu"
+          className="absolute left-0 mt-2 w-64 bg-white dark:bg-dark-color shadow-lg rounded-lg border border-gray-200 dark:border-gray-700 z-10 transition-all duration-300"
+        >
           <div className="py-1" role="menu" aria-orientation="vertical">
             <Link
               href="/programs/swahili-tech-women"
-              className="dropdown-item hover:text-primary dark:hover:text-blue-400"
+              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
               role="menuitem"
+              onClick={() => setIsOpen(false)} // Close the menu on link click (mobile)
             >
               Swahili Tech Women
             </Link>
             <Link
               href="/programs/case-management"
-              className="dropdown-item hover:text-primary dark:hover:text-blue-400"
+              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
               role="menuitem"
+              onClick={() => setIsOpen(false)} // Close the menu on link click (mobile)
             >
               Case Management
             </Link>
             <Link
               href="/programs/events"
-              className="dropdown-item hover:text-primary dark:hover:text-blue-400"
+              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
               role="menuitem"
+              onClick={() => setIsOpen(false)} // Close the menu on link click (mobile)
             >
               Events
             </Link>
             <Link
               href="/programs/campus_ambassador"
-              className="dropdown-item hover:text-primary dark:hover:text-blue-400"
+              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
               role="menuitem"
+              onClick={() => setIsOpen(false)} // Close the menu on link click (mobile)
             >
               Campus Ambassador
             </Link>
             <Link
               href="/programs/mombasa-tourism-innovation-lab"
-              className="dropdown-item hover:text-primary dark:hover:text-blue-400"
+              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
               role="menuitem"
+              onClick={() => setIsOpen(false)} // Close the menu on link click (mobile)
             >
               Mombasa Tourism Innovation Lab
             </Link>
             <Link
               href="/programs/young-business-executive-fellowship"
-              className="dropdown-item hover:text-primary dark:hover:text-blue-400"
+              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
               role="menuitem"
+              onClick={() => setIsOpen(false)} // Close the menu on link click (mobile)
             >
               Young Business Executive Fellowship
             </Link>
