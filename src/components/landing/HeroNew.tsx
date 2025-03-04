@@ -1,82 +1,64 @@
-import Link from 'next/link';
+'use client';
+
 import Image from 'next/image';
-import '../../styles/HeroNew.module.css';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick-theme.css';
 
-export default function HeroNew() {
+const HeroNew = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+  };
+
+  const slides = [
+    {
+      id: 1,
+      image: '/images/slide1.jpg',
+      title: 'Welcome to Our Platform',
+      description: 'Discover amazing content and explore new possibilities.',
+    },
+    {
+      id: 2,
+      image: '/images/slide2.jpg',
+      title: 'Stay Informed',
+      description: 'Get the latest updates and news at your fingertips.',
+    },
+    {
+      id: 3,
+      image: '/images/slide3.jpg',
+      title: 'Join Our Community',
+      description: 'Connect, share, and grow with like-minded individuals.',
+    },
+  ];
+
   return (
-    <section className="hero-gradient text-white py-24">
-      <div className="container-custom mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="hero-animation">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Empowering Youth Through Technology & Arts
-            </h1>
-            <p className="text-xl mb-8 opacity-90">
-              SwahiliPot Hub is a collaborative space where innovation meets
-              creativity, nurturing the next generation of leaders in East
-              Africa.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/about"
-                className="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors"
-              >
-                Discover Our Story
-              </Link>
-              <Link
-                href="/joinus"
-                className="bg-transparent border-2 border-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition-colors"
-              >
-                Join Our Community
-              </Link>
+    <div className="w-full h-[500px] relative overflow-hidden">
+      <Slider {...settings}>
+        {slides.map((slide) => (
+          <div key={slide.id} className="relative w-full h-[500px]">
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              layout="fill"
+              objectFit="cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white text-center px-4">
+              <h1 className="text-3xl md:text-5xl font-bold">{slide.title}</h1>
+              <p className="text-lg md:text-xl mt-2">{slide.description}</p>
             </div>
           </div>
-
-          <div className="relative">
-            <div className="bg-white bg-opacity-10 p-8 rounded-lg backdrop-filter backdrop-blur-sm border border-white border-opacity-20">
-              <h2 className="text-2xl font-bold mb-4">Upcoming Events</h2>
-
-              <div className="space-y-4">
-                <div className="bg-white bg-opacity-10 p-4 rounded-md hover:bg-opacity-20 transition-all">
-                  <div className="text-sm font-medium mb-1">March 15, 2025</div>
-                  <h3 className="font-semibold mb-1">Tech Hackathon 2025</h3>
-                  <p className="text-sm opacity-80">
-                    A 48-hour coding challenge to solve local community
-                    problems.
-                  </p>
-                </div>
-
-                <div className="bg-white bg-opacity-10 p-4 rounded-md hover:bg-opacity-20 transition-all">
-                  <div className="text-sm font-medium mb-1">April 5, 2025</div>
-                  <h3 className="font-semibold mb-1">Women in Tech Summit</h3>
-                  <p className="text-sm opacity-80">
-                    Celebrating and empowering women in technology fields.
-                  </p>
-                </div>
-
-                <div className="bg-white bg-opacity-10 p-4 rounded-md hover:bg-opacity-20 transition-all">
-                  <div className="text-sm font-medium mb-1">May 20, 2025</div>
-                  <h3 className="font-semibold mb-1">
-                    Youth Innovation Showcase
-                  </h3>
-                  <p className="text-sm opacity-80">
-                    Showcasing innovative projects by young entrepreneurs.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-4">
-                <Link
-                  href="/programs/events"
-                  className="text-white font-medium hover:underline"
-                >
-                  View All Events →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        ))}
+      </Slider>
+    </div>
   );
-}
+};
+
+export default HeroNew;
