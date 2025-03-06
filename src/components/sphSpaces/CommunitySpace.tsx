@@ -13,7 +13,7 @@ export default function CommunitySpace() {
         "Sound system",
         "Air conditioning",
         "Wi-Fi access"
-      ],
+      ]
       capacity: "Up to 100 people",
       link: "/spaces/community-space"
     },
