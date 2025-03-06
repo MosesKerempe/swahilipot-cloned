@@ -43,11 +43,12 @@ const HeroNew = () => {
       <Slider {...settings}>
         {slides.map((slide) => (
           <div key={slide.id} className="relative w-full h-[500px]">
+            {/* ✅ Fixed Image Component */}
             <Image
               src={slide.image}
               alt={slide.title}
-              layout="fill"
-              objectFit="cover"
+              fill
+              className="object-cover"
               priority
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white text-center px-4">
