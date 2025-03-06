@@ -53,7 +53,7 @@ export default function CorePillars() {
 
         <div className="text-center mt-12">
           <p className="text-gray-700">Have a question?</p>
-          <a href="#" className="text-blue-600 hover:underline">
+          <a href="/contact" className="text-blue-600 hover:underline">
             Contact Us &gt;
           </a>
         </div>

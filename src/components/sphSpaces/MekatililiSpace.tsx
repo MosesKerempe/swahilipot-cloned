@@ -6,7 +6,7 @@ export default function MekatililiSpace() {
       <div className="container-custom mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
           <div className="order-2 md:order-1">
-            <h2 className="text-3xl font-bold mb-6">Mekatilili Creative Studio</h2>
+            <h2 className="text-3xl font-bold mb-6">Mekatilili Space</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
               Named after Mekatilili wa Menza, a legendary female leader from the Kenyan coast, our creative studio is a space dedicated to artistic expression and innovation. This vibrant space is designed to inspire creativity and collaboration among artists, designers, and creators.
             </p>

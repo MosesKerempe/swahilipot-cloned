@@ -17,7 +17,11 @@ export default function MentorshipDonation() {
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
               Thank you for your support in advancing our efforts to foster growth and empowerment among women in the tech industry.
             </p>
-            <Link href="https://flutterwave.com/pay/4nvphchgpofl" className="btn px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+            <Link
+              href="https://flutterwave.com/pay/4nvphchgpofl"
+              target="_blank"
+              className="btn px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300"
+            >
               Donate Now
             </Link>
           </div>
@@ -33,7 +37,11 @@ export default function MentorshipDonation() {
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
               Thank you for your support in our ongoing efforts to empower women in the tech industry.
             </p>
-            <Link href="https://flutterwave.com/pay/4nvphchgpofl" className="btn px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+            <Link
+              href="https://flutterwave.com/pay/4nvphchgpofl"
+              target="_blank"
+              className="btn px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300"
+            >
               Donate Now
             </Link>
           </div>

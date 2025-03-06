@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useHotkeys } from 'react-hotkeys-hook';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAccessibility } from './AccessibilityContext';
 import { 
   FaTextHeight, 
   FaTextWidth, 
@@ -18,59 +19,25 @@ interface AccessibilityMenuProps {
 }
 
 export default function AccessibilityMenu({ isOpen, onClose }: AccessibilityMenuProps) {
-  // Keyboard shortcut to toggle menu
+  const {
+    fontSize,
+    setFontSize,
+    toggleTextSpacing,
+    toggleHighContrast,
+    toggleHighlightLinks,
+    togglePauseAnimations,
+    toggleHideImages,
+    toggleDyslexiaFont,
+    toggleLargeCursor
+  } = useAccessibility();
+
   useHotkeys('ctrl+u', (event) => {
     event.preventDefault();
     onClose();
   });
 
-  // Handle font size
-  const increaseFontSize = () => {
-    const html = document.documentElement;
-    const currentSize = parseFloat(window.getComputedStyle(html).fontSize);
-    html.style.fontSize = `${currentSize + 2}px`;
-  };
-
-  const decreaseFontSize = () => {
-    const html = document.documentElement;
-    const currentSize = parseFloat(window.getComputedStyle(html).fontSize);
-    html.style.fontSize = `${currentSize - 2}px`;
-  };
-
-  // Handle text spacing
-  const toggleTextSpacing = () => {
-    document.body.classList.toggle('increased-spacing');
-  };
-
-  // Handle contrast
-  const toggleHighContrast = () => {
-    document.body.classList.toggle('high-contrast');
-  };
-
-  // Handle link highlighting
-  const toggleLinkHighlight = () => {
-    document.body.classList.toggle('highlight-links');
-  };
-
-  // Handle animations
-  const toggleAnimations = () => {
-    document.body.classList.toggle('pause-animations');
-  };
-
-  // Handle images
-  const toggleImages = () => {
-    document.body.classList.toggle('hide-images');
-  };
-
-  // Handle dyslexia font
-  const toggleDyslexiaFont = () => {
-    document.body.classList.toggle('dyslexia-friendly');
-  };
-
-  // Handle cursor
-  const toggleLargeCursor = () => {
-    document.body.classList.toggle('large-cursor');
-  };
+  const increaseFontSize = () => setFontSize(fontSize + 2);
+  const decreaseFontSize = () => setFontSize(Math.max(12, fontSize - 2));
 
   useEffect(() => {
     if (isOpen) {
@@ -88,7 +55,6 @@ export default function AccessibilityMenu({ isOpen, onClose }: AccessibilityMenu
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.5 }}
@@ -96,8 +62,6 @@ export default function AccessibilityMenu({ isOpen, onClose }: AccessibilityMenu
             onClick={onClose}
             className="fixed inset-0 bg-black z-40"
           />
-
-          {/* Menu */}
           <motion.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
@@ -118,29 +82,29 @@ export default function AccessibilityMenu({ isOpen, onClose }: AccessibilityMenu
               </div>
 
               <div className="space-y-6">
-                {/* Font Size */}
                 <div>
                   <h3 className="font-semibold mb-2 flex items-center">
                     <FaTextHeight className="mr-2" />
-                    Font Size
+                    Font Size (Current: {fontSize}px)
                   </h3>
                   <div className="flex space-x-2">
                     <button
                       onClick={decreaseFontSize}
                       className="accessibility-btn"
+                      aria-label="Decrease font size"
                     >
                       A-
                     </button>
                     <button
                       onClick={increaseFontSize}
                       className="accessibility-btn"
+                      aria-label="Increase font size"
                     >
                       A+
                     </button>
                   </div>
                 </div>
 
-                {/* Text Spacing */}
                 <div>
                   <h3 className="font-semibold mb-2 flex items-center">
                     <FaTextWidth className="mr-2" />
@@ -154,7 +118,6 @@ export default function AccessibilityMenu({ isOpen, onClose }: AccessibilityMenu
                   </button>
                 </div>
 
-                {/* Contrast */}
                 <div>
                   <h3 className="font-semibold mb-2 flex items-center">
                     <FaAdjust className="mr-2" />
@@ -168,49 +131,45 @@ export default function AccessibilityMenu({ isOpen, onClose }: AccessibilityMenu
                   </button>
                 </div>
 
-                {/* Link Highlighting */}
                 <div>
                   <h3 className="font-semibold mb-2 flex items-center">
                     <FaLink className="mr-2" />
                     Link Highlighting
                   </h3>
                   <button
-                    onClick={toggleLinkHighlight}
+                    onClick={toggleHighlightLinks}
                     className="accessibility-btn w-full"
                   >
                     Toggle Link Highlight
                   </button>
                 </div>
 
-                {/* Animations */}
                 <div>
                   <h3 className="font-semibold mb-2 flex items-center">
                     <FaPause className="mr-2" />
                     Animations
                   </h3>
                   <button
-                    onClick={toggleAnimations}
+                    onClick={togglePauseAnimations}
                     className="accessibility-btn w-full"
                   >
                     Pause Animations
                   </button>
                 </div>
 
-                {/* Images */}
                 <div>
                   <h3 className="font-semibold mb-2 flex items-center">
                     <FaImage className="mr-2" />
                     Images
                   </h3>
                   <button
-                    onClick={toggleImages}
+                    onClick={toggleHideImages}
                     className="accessibility-btn w-full"
                   >
                     Hide Images
                   </button>
                 </div>
 
-                {/* Dyslexia Font */}
                 <div>
                   <h3 className="font-semibold mb-2 flex items-center">
                     <FaFont className="mr-2" />
@@ -224,7 +183,6 @@ export default function AccessibilityMenu({ isOpen, onClose }: AccessibilityMenu
                   </button>
                 </div>
 
-                {/* Cursor */}
                 <div>
                   <h3 className="font-semibold mb-2 flex items-center">
                     <FaMousePointer className="mr-2" />
