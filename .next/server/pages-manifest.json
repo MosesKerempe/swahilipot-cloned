@@ -1,8 +1,1 @@
-{
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/_app": "pages/_app.js",
-  "/spaces/community-space": "pages/spaces/community-space.js",
-  "/404": "pages/404.js",
-  "/contact": "pages/contact.js"
-}
+{}
