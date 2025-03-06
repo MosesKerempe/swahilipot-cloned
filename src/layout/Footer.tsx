@@ -56,7 +56,7 @@ export default function Footer() {
                 <Link href="/programs/events" className="hover:text-yellow-400">Events</Link>
               </li>
               <li>
-                <Link href="/spaces/community-space" className="hover:text-yellow-400">Spaces</Link>
+                <Link href="/spaces/SpacesLayout" className="hover:text-yellow-400">Spaces</Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-yellow-400">Contact Us</Link>

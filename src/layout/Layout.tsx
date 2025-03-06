@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import MetaTags from './MetaTags';
 import { ThemeProvider } from '@/utils/themeContext';
+import { AccessibilityProvider } from '@/components/accesibility/AccessibilityContext';
 import AccessibilityButton from '@/components/accesibility/AccessibilityButton';
 import AccessibilityMenu from '@/components/accesibility/AccessibilityMenu';
 
@@ -23,19 +24,28 @@ export default function Layout({
 
   return (
     <ThemeProvider>
-      <MetaTags title={title} description={description} image={image} />
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+      <AccessibilityProvider>
+        <MetaTags title={title} description={description} image={image} />
+        <div className="flex flex-col min-h-screen">
+          {/* Skip to main content link */}
+          <a href="#main-content" className="skip-to-main">
+            Skip to main content
+          </a>
 
-        {/* Accessibility Features */}
-        <AccessibilityButton onClick={() => setIsAccessibilityMenuOpen(true)} />
-        <AccessibilityMenu 
-          isOpen={isAccessibilityMenuOpen} 
-          onClose={() => setIsAccessibilityMenuOpen(false)} 
-        />
-      </div>
+          <Header />
+          <main id="main-content" className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+
+          {/* Accessibility Features */}
+          <AccessibilityButton onClick={() => setIsAccessibilityMenuOpen(true)} />
+          <AccessibilityMenu 
+            isOpen={isAccessibilityMenuOpen} 
+            onClose={() => setIsAccessibilityMenuOpen(false)} 
+          />
+        </div>
+      </AccessibilityProvider>
     </ThemeProvider>
   );
 }
