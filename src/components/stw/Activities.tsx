@@ -1,45 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function Activities() {
-  const programs = [
-    {
-      title: "Tech Skills Training",
-      description: "Comprehensive training programs in various tech fields including web development, mobile app development, data science, UI/UX design, and more.",
-      icon: "💻",
-      link: "/programs/swahili-tech-women/training"
-    },
-    {
-      title: "Mentorship Program",
-      description: "Connect with experienced professionals in the tech industry who provide guidance, support, and career advice.",
-      icon: "🤝",
-      link: "/programs/swahili-tech-women/mentorship"
-    },
-    {
-      title: "Networking Events",
-      description: "Regular meetups, conferences, and networking sessions to build connections within the tech community.",
-      icon: "🔄",
-      link: "/programs/swahili-tech-women/events"
-    },
-    {
-      title: "Career Development",
-      description: "Resume workshops, interview preparation, job placement assistance, and career counseling services.",
-      icon: "📈",
-      link: "/programs/swahili-tech-women/career"
-    },
-    {
-      title: "Tech Talks & Workshops",
-      description: "Regular sessions featuring industry experts discussing emerging technologies and trends.",
-      icon: "🎤",
-      link: "/programs/swahili-tech-women/talks"
-    },
-    {
-      title: "Scholarship Program",
-      description: "Financial support for women pursuing education and certification in technology fields.",
-      icon: "🎓",
-      link: "/programs/swahili-tech-women/scholarships"
-    }
-  ];
 
   return (
     <section className="py-16 bg-light dark:bg-gray-800">
@@ -72,4 +33,3 @@ export default function Activities() {
       </div>
     </section>
   );
-}

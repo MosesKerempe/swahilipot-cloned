@@ -25,7 +25,7 @@ export default function STWHero() {
           
           <div className="rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+              src="/images/women-micky.jpeg" 
               alt="Swahili Tech Women" 
               className="w-full h-auto"
             />
