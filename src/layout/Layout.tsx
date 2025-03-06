@@ -1,8 +1,10 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import MetaTags from './MetaTags';
 import { ThemeProvider } from '@/utils/themeContext';
+import AccessibilityButton from '@/components/accesibility/AccessibilityButton';
+import AccessibilityMenu from '@/components/accesibility/AccessibilityMenu';
 
 interface LayoutProps {
   children: ReactNode;
@@ -17,6 +19,8 @@ export default function Layout({
   description = 'SwahiliPot Hub is a collaborative space for technology, arts, and culture in Mombasa, Kenya.',
   image = '/images/og-image.jpg'
 }: LayoutProps) {
+  const [isAccessibilityMenuOpen, setIsAccessibilityMenuOpen] = useState(false);
+
   return (
     <ThemeProvider>
       <MetaTags title={title} description={description} image={image} />
@@ -24,6 +28,13 @@ export default function Layout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+
+        {/* Accessibility Features */}
+        <AccessibilityButton onClick={() => setIsAccessibilityMenuOpen(true)} />
+        <AccessibilityMenu 
+          isOpen={isAccessibilityMenuOpen} 
+          onClose={() => setIsAccessibilityMenuOpen(false)} 
+        />
       </div>
     </ThemeProvider>
   );
