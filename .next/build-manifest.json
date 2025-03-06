@@ -12,11 +12,6 @@
   ],
   "rootMainFiles": [],
   "pages": {
-    "/": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/index.js"
-    ],
     "/404": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -32,15 +27,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/programs/events": [
+    "/spaces/community-space": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/programs/events.js"
-    ],
-    "/spfm": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/spfm.js"
+      "static/chunks/pages/spaces/community-space.js"
     ]
   },
   "ampFirstPages": []
