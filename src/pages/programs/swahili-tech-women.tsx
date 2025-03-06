@@ -1,7 +1,6 @@
 import React from 'react';
 import STWHero from '@/components/stw/STWHero';
 import STWExplanation from '@/components/stw/STWExplanation';
-import Activities from '@/components/stw/Activities';
 import MentorshipDonation from '@/components/stw/MentorshipDonation';
 import PadDonationsCard from '@/components/stw/padDonationsCard';
 
@@ -10,7 +9,6 @@ export default function SwahiliTechWomenPage() {
     <>
       <STWHero />
       <STWExplanation />
-      <Activities />
       <MentorshipDonation />
       <PadDonationsCard />
     </>
