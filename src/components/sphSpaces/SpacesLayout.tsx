@@ -5,7 +5,7 @@ import CommunitySpace from './CommunitySpace';
 import MazuruiSpace from './MazuruiSpace';
 import MekatililiSpace from './MekatililiSpace';
 import MwanaKuponaSpace from './MwanaKuponaSpace';
-import SpacesCard from './SpacesCard';
+
 
 const SpacesLayout = () => {
   return (
@@ -22,16 +22,7 @@ const SpacesLayout = () => {
       </div>
 
       {/* Optionally, you can map through an array of spaces to display them dynamically if the space data is dynamic */}
-      <div className="other-spaces mt-12">
-        <SpacesCard
-          title={''}
-          description={''}
-          image={''}
-          features={[]}
-          capacity={''}
-          link={''}
-        />
-      </div>
+    
     </div>
   );
 };

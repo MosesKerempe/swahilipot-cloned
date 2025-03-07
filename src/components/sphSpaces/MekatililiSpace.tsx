@@ -1,167 +1,60 @@
-import React from 'react';
+import Image from 'next/image';
 
-export default function MekatililiSpace() {
+const MekatililiSpace = () => {
   return (
-    <section className="py-16 bg-white dark:bg-gray-800">
-      <div className="container-custom mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-          <div className="order-2 md:order-1">
-            <h2 className="text-3xl font-bold mb-6">Mekatilili Space</h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              Named after Mekatilili wa Menza, a legendary female leader from the Kenyan coast, our creative studio is a space dedicated to artistic expression and innovation. This vibrant space is designed to inspire creativity and collaboration among artists, designers, and creators.
-            </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              The studio provides the tools, equipment, and environment needed for various creative pursuits, from visual arts to digital design and multimedia production.
-            </p>
-            <div className="bg-light dark:bg-gray-700 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4">Studio Features</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">Professional lighting equipment</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">Digital design workstations</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">Audio recording equipment</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">Photography and videography gear</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">Art supplies and materials</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">Exhibition space</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="order-1 md:order-2 rounded-lg overflow-hidden shadow-md">
-            <img 
-              src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-              alt="Mekatilili Creative Studio at SwahiliPot Hub" 
-              className="w-full h-auto object-cover"
-            />
-          </div>
+    <section className="bg-white text-black">
+      {/* Hero Section */}
+      <div className="bg-blue-900 text-white py-10 px-6 text-center">
+        <h1 className="text-3xl font-bold">Mekatilili Space</h1>
+        <p className="text-lg">Discover the Spirit of Mekatilili.</p>
+      </div>
+      
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto p-6">
+        {/* Image Section */}
+        <div className="w-full flex justify-center my-6">
+          <Image src="/images/Mekatilili.jpg" alt="Mekatilili Space" width={800} height={450} className="rounded-lg shadow-lg" />
         </div>
         
-        <div className="bg-light dark:bg-gray-700 p-8 rounded-lg mb-16">
-          <h3 className="text-2xl font-semibold mb-6">Creative Activities</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg text-center">
-              <p className="text-gray-700 dark:text-gray-300">Digital Art</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg text-center">
-              <p className="text-gray-700 dark:text-gray-300">Photography</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg text-center">
-              <p className="text-gray-700 dark:text-gray-300">Videography</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg text-center">
-              <p className="text-gray-700 dark:text-gray-300">Graphic Design</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg text-center">
-              <p className="text-gray-700 dark:text-gray-300">Painting</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg text-center">
-              <p className="text-gray-700 dark:text-gray-300">Podcasting</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg text-center">
-              <p className="text-gray-700 dark:text-gray-300">Animation</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg text-center">
-              <p className="text-gray-700 dark:text-gray-300">Music Production</p>
-            </div>
-          </div>
-        </div>
+        {/* Text Content */}
+        <h2 className="text-2xl font-semibold mb-4">Discover the Spirit of Mekatilili</h2>
+        <p className="mb-6">
+          The Mekatilili Community Space is a versatile and welcoming area designed to host a wide range of activities and events. 
+          With its open, airy design and ample natural light, it’s the perfect setting for gatherings, workshops, and cultural celebrations. 
+          The space features modern amenities, comfortable seating, and is equipped with the latest audio-visual technology, making it ideal 
+          for seminars, lectures, and community meetings.
+        </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-            <h4 className="text-xl font-medium mb-4">Membership Options</h4>
-            <ul className="space-y-4">
-              <li>
-                <div className="flex justify-between mb-1">
-                  <span className="font-semibold">Day Pass</span>
-                  <span className="font-semibold">KES 500</span>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Access to the studio for a full day (8 hours)
-                </p>
-              </li>
-              <li>
-                <div className="flex justify-between mb-1">
-                  <span className="font-semibold">Weekly Membership</span>
-                  <span className="font-semibold">KES 2,000</span>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Unlimited access for one week
-                </p>
-              </li>
-              <li>
-                <div className="flex justify-between mb-1">
-                  <span className="font-semibold">Monthly Membership</span>
-                  <span className="font-semibold">KES 5,000</span>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Unlimited access for one month, plus storage space
-                </p>
-              </li>
-              <li>
-                <div className="flex justify-between mb-1">
-                  <span className="font-semibold">Quarterly Membership</span>
-                  <span className="font-semibold">KES 12,000</span>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Unlimited access for three months, storage space, and priority booking
-                </p>
-              </li>
-            </ul>
-          </div>
-          
-          <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-            <h4 className="text-xl font-medium mb-4">Studio Programs</h4>
-            <div className="space-y-4">
-              <div>
-                <h5 className="font-semibold mb-1">Creative Workshops</h5>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Regular workshops on various creative skills led by experienced professionals.
-                </p>
-              </div>
-              <div>
-                <h5 className="font-semibold mb-1">Artist Residency Program</h5>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Opportunities for artists to work in the studio for extended periods on specific projects.
-                </p>
-              </div>
-              <div>
-                <h5 className="font-semibold mb-1">Exhibition Opportunities</h5>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Regular exhibitions to showcase work created in the studio.
-                </p>
-              </div>
-              <div>
-                <h5 className="font-semibold mb-1">Mentorship Program</h5>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Connect with experienced creatives for guidance and support.
-                </p>
-              </div>
-            </div>
-            <div className="mt-6">
-              <a href="/programs/creative-arts" className="btn">
-                Learn More
-              </a>
-            </div>
-          </div>
-        </div>
+        {/* Benefits to the Community */}
+        <h2 className="text-2xl font-semibold mb-4">Benefits to the Community:</h2>
+        <ul className="list-disc pl-6 space-y-4">
+          <li>
+            <strong>Education and Empowerment:</strong> Mekatilili Space is dedicated to promoting education and empowerment. 
+            It serves as a hub for workshops, seminars, and skill-building sessions, allowing our community to learn and grow.
+          </li>
+          <li>
+            <strong>Cultural Celebrations:</strong> From traditional dance performances to storytelling sessions, Mekatilili Space is the place where our 
+            rich cultural heritage comes to life. It’s the perfect stage for celebrating our history and traditions.
+          </li>
+          <li>
+            <strong>Community Meetings:</strong> Whether you’re planning a neighborhood association meeting or a local event, 
+            Mekatilili Space offers a welcoming environment to gather and discuss community matters.
+          </li>
+          <li>
+            <strong>Unity and Collaboration:</strong> Mekatilili Space is where people come together to collaborate, share ideas, 
+            and work on initiatives that benefit our community. It’s a space where partnerships are forged and dreams become reality.
+          </li>
+        </ul>
+        
+        {/* Legacy Section */}
+        <h2 className="text-2xl font-semibold mt-6">Mekatilili wa Menza: A Legacy of Strength</h2>
+        <p className="mb-6">
+          Mekatilili wa Menza was a fearless Kenyan woman who fought for the rights and freedom of her people during the colonial era. 
+          She serves as an inspiration to us all, and her legacy continues to live on in the Mekatilili  Space. Join us in honoring her memory and building a stronger,more empowered community together.
+        </p>
       </div>
     </section>
   );
-}
+};
+
+export default MekatililiSpace;
