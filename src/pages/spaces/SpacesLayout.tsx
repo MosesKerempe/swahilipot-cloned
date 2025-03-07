@@ -2,6 +2,7 @@
 import React from 'react';
 import SpacesLayout from '../../components/sphSpaces/SpacesLayout';
 
+
 const SpacesPage = () => {
   return (
     <div className="spaces-page">
