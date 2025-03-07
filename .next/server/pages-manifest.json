@@ -4,6 +4,5 @@
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
   "/programs/campus_ambassador": "pages/programs/campus_ambassador.js",
-  "/spfm": "pages/spfm.js",
-  "/404": "pages/404.js"
+  "/spfm": "pages/spfm.js"
 }
