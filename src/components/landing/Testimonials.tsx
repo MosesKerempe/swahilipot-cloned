@@ -4,26 +4,27 @@ export default function Testimonials() {
   const testimonials = [
     {
       quote: "SwahiliPot Hub has been instrumental in my tech journey. The mentorship and resources provided helped me launch my startup.",
-      name: "Jane Doe",
-      title: "Tech Entrepreneur",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80"
-    },
+      name: "Chris Achinga",
+      title: "Software Developer",
+      image: "/images/mtu.png"
+     
+  },
     {
       quote: "The creative community at SwahiliPot Hub gave me the confidence to pursue my passion for digital art. I've found my tribe here.",
-      name: "John Smith",
+      name: "Jones Iann",
       title: "Digital Artist",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80"
+      image: "/images/mtu.png"
     },
     {
       quote: "As a young woman in tech, the support I've received from SwahiliPot Hub has been invaluable. Their programs are truly transformative.",
-      name: "Mary Johnson",
+      name: "Sanaipei Lenapunya",
       title: "Software Developer",
-      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80"
+      image: "images/mtu.png"
     }
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-orange-50">
       <div className="container-custom mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">What Our Community Says</h2>

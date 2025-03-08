@@ -1,33 +1,47 @@
 import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
-export default function ProgramMenu() {
-  const [isOpen, setIsOpen] = useState(false);
+// Define the props type
+interface ProgramMenuProps {
+  isOpen: boolean;
+  onLinkClick: () => void;
+}
+
+const ProgramMenu: React.FC<ProgramMenuProps> = ({ isOpen, onLinkClick }) => {
   const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
+  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
+        onLinkClick(); // Close the menu if clicked outside
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onLinkClick(); // Close the menu when 'Escape' key is pressed
+        buttonRef.current?.focus(); // Refocus button after closing
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [onLinkClick]);
 
   return (
     <div className="relative" ref={menuRef}>
+      {/* Toggle Button */}
       <button
-        className="flex items-center space-x-1 hover:text-primary dark:hover:text-blue-400 transition-all duration-300"
-        onClick={toggleMenu}
-        aria-expanded={isOpen ? 'true' : 'false'}
+        ref={buttonRef}
+        className="flex items-center space-x-1 hover:text-primary dark:hover:text-blue-400 transition-all duration-300 focus:outline-none"
+        aria-expanded={isOpen}
         aria-controls="program-menu"
       >
         <span>Programs</span>
@@ -42,63 +56,47 @@ export default function ProgramMenu() {
         </svg>
       </button>
 
-      {isOpen && (
-        <div
-          id="program-menu"
-          className="absolute left-0 mt-2 w-64 bg-white dark:bg-dark-color shadow-lg rounded-lg border border-gray-200 dark:border-gray-700 z-10 transition-all duration-300"
-        >
-          <div className="py-1" role="menu" aria-orientation="vertical">
-            <Link
-              href="/programs/swahili-tech-women"
-              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
-              role="menuitem"
-              onClick={() => setIsOpen(false)} // Close the menu on link click (mobile)
-            >
-              Swahili Tech Women
-            </Link>
-            <Link
-              href="/programs/case-management"
-              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
-              role="menuitem"
-              onClick={() => setIsOpen(false)} // Close the menu on link click (mobile)
-            >
-              Case Management
-            </Link>
-            <Link
-              href="/programs/events"
-              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
-              role="menuitem"
-              onClick={() => setIsOpen(false)} // Close the menu on link click (mobile)
-            >
-              Events
-            </Link>
-            <Link
-              href="/programs/campus_ambassador"
-              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
-              role="menuitem"
-              onClick={() => setIsOpen(false)} // Close the menu on link click (mobile)
-            >
-              Campus Ambassador
-            </Link>
-            <Link
-              href="/programs/mombasa-tourism-innovation-lab"
-              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
-              role="menuitem"
-              onClick={() => setIsOpen(false)} // Close the menu on link click (mobile)
-            >
-              Mombasa Tourism Innovation Lab
-            </Link>
-            <Link
-              href="/programs/young-business-executive-fellowship"
-              className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
-              role="menuitem"
-              onClick={() => setIsOpen(false)} // Close the menu on link click (mobile)
-            >
-              Young Business Executive Fellowship
-            </Link>
-          </div>
-        </div>
-      )}
+      {/* Animated Dropdown Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            id="program-menu"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            className="absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 text-black dark:text-white shadow-lg rounded-lg border border-gray-200 dark:border-gray-700 z-10"
+            role="menu"
+            aria-orientation="vertical"
+            onMouseEnter={() => {}}
+            onMouseLeave={() => {}}
+          >
+            <div className="py-1">
+              {[
+                { href: '/programs/swahili-tech-women', label: 'Swahili Tech Women' },
+                { href: '/programs/case-management', label: 'Case Management' },
+                { href: '/programs/events', label: 'Events' },
+                { href: '/programs/campus_ambassador', label: 'Campus Ambassador' },
+                { href: '/programs/mombasa-tourism-innovation-lab', label: 'Mombasa Tourism Innovation Lab' },
+                { href: '/programs/young-business-executive-fellowship', label: 'Young Business Executive Fellowship' },
+              ].map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 
+                             rounded transition-all duration-300"
+                  role="menuitem"
+                  onClick={(e) => e.stopPropagation()} // Prevent close on clicking the menu item
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
-}
+};
+
+export default ProgramMenu;

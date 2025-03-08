@@ -5,32 +5,32 @@ export default function Gallery() {
   // This would typically come from your data file or CMS
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      alt: "Tech workshop at SwahiliPot Hub",
-      caption: "Tech workshop for local youth"
+      src: "/images/AliMazurui.jpg", 
+      alt: "An event at SwahiliPot Hub",
+      caption: "Event led by Our Chief Mentor 001" 
     },
     {
-      src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      src: "/images/Amp.jpg",
       alt: "Art exhibition at SwahiliPot Hub",
-      caption: "Local artists showcase at our gallery"
+      caption: "Pwani Innovation Week at Swahilipot Hub"
     },
     {
-      src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      alt: "Coding bootcamp",
-      caption: "Intensive coding bootcamp for beginners"
+      src: "/images/attach.jpeg", 
+      alt: "kina Chris na Bruno",
+      caption: "Techies and Volunteers at Swahilipot Hub"
     },
     {
-      src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      src: "/images/Mekatilili.jpg", 
       alt: "Community meetup",
-      caption: "Monthly community gathering"
+      caption: "Community gathering at Swahilipot Hub"
     },
     {
-      src: "https://images.unsplash.com/photo-1540317580384-e5d43867caa6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      src: "/images/mwanakupona.jpg", 
       alt: "Hackathon event",
-      caption: "Annual hackathon competition"
+      caption: "Info session at Jitume Lab with techies"
     },
     {
-      src: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      src: "/images/slide2.jpg", 
       alt: "Youth performance",
       caption: "Cultural performance by local youth"
     }
@@ -57,7 +57,7 @@ export default function Gallery() {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-blue-50">
       <div className="container-custom mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Gallery</h2>
@@ -74,10 +74,11 @@ export default function Gallery() {
               onClick={() => openLightbox(index)}
             >
               <div className="h-64 relative">
-                <img 
+                <Image 
                   src={image.src} 
                   alt={image.alt} 
                   className="w-full h-full object-cover transition-transform hover:scale-105"
+                  layout="fill" // Ensures that Image component covers the area fully
                 />
               </div>
               <div className="p-4 bg-white">
@@ -103,10 +104,13 @@ export default function Gallery() {
               &#8249;
             </button>
             <div className="max-w-4xl max-h-[80vh]">
-              <img 
+              <Image 
                 src={images[selectedImage].src} 
                 alt={images[selectedImage].alt} 
                 className="max-w-full max-h-[80vh] object-contain"
+                layout="intrinsic" // Makes the image maintain aspect ratio
+                width={800} // Optional: Set a width to maintain aspect ratio
+                height={600} // Optional: Set a height to maintain aspect ratio
               />
               <p className="text-white text-center mt-4">{images[selectedImage].caption}</p>
             </div>

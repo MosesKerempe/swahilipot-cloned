@@ -15,9 +15,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
 
     // Set up email data
-    const mailOptions = {
+    const mailOptions = {                                                                                      
       from: email,
-      to: process.env.RECIPIENT_EMAIL, // The recipient email address
+      to: process.env.RECIPIENT_EMAIL, // The recipient email address - receiving emails.
       subject: `New message from: ${name} - ${subject}`,
       text: `
         You have received a new message from the contact form:

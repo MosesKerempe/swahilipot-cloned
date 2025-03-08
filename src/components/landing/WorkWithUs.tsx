@@ -29,7 +29,7 @@ export default function WorkWithUs() {
   ];
 
   return (
-    <section className="py-16 bg-light">
+    <section className="py-16 bg-blue-50">
       <div className="container-custom mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Work With Us</h2>
