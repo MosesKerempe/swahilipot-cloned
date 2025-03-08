@@ -11,104 +11,174 @@ import YouthDatabase from './Menus/YouthDatabase';
 import MenuCTA from './Menus/MenuCTA';
 import ThemeToggle from '@/components/shared/ThemeToggle';
 
+interface MenuProps {
+  isOpen: boolean;
+  onLinkClick: () => void;
+}
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);  // Close the mobile menu
+    setActiveDropdown(null); // Reset active dropdown when a link is clicked
+  };
+
+  const handleMouseEnter = (menu: string) => {
+    setActiveDropdown(menu);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveDropdown(null);
   };
 
   return (
-    <header className={`sticky top-0 z-50 bg-white dark:bg-dark-color transition-all duration-300 ${
-      isScrolled ? 'shadow-md py-2' : 'py-4'
-    }`}>
+    <header
+      className={`sticky top-0 z-50 bg-white dark:bg-gray-900 transition-all duration-300 ${
+        isScrolled ? 'shadow-md py-2' : 'py-4'
+      }`}
+    >
       <div className="container-custom mx-auto">
-        <div className="flex justify-between items-center">
+        <nav className="flex justify-between items-center">
           <div className="flex items-center">
             <Logo />
           </div>
-          
+
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            <AboutMenu />
-            <DepartmentMenu />
-            <ProgramMenu />
-            <Link href="/adverts" className="hover:text-primary dark:hover:text-blue-400">
+          <div className="hidden lg:flex items-center space-x-8">
+            {/* About Dropdown */}
+            <div
+              onMouseEnter={() => handleMouseEnter('about')}
+              onMouseLeave={handleMouseLeave}
+            >
+              <AboutMenu
+                isOpen={activeDropdown === 'about'}
+                onLinkClick={handleLinkClick}
+              />
+            </div>
+
+            {/* Department Dropdown */}
+            <div
+              onMouseEnter={() => handleMouseEnter('department')}
+              onMouseLeave={handleMouseLeave}
+            >
+              <DepartmentMenu
+                isOpen={activeDropdown === 'department'}
+                onLinkClick={handleLinkClick}
+              />
+            </div>
+
+            {/* Program Dropdown */}
+            <div
+              onMouseEnter={() => handleMouseEnter('program')}
+              onMouseLeave={handleMouseLeave}
+            >
+              <ProgramMenu
+                isOpen={activeDropdown === 'program'}
+                onLinkClick={handleLinkClick}
+              />
+            </div>
+
+            <Link
+              href="/adverts"
+              className="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors"
+              onClick={handleLinkClick}
+            >
               Adverts
             </Link>
-            
-            <Link href="/spfm" className="hover:text-primary dark:hover:text-blue-400">
+            <Link
+              href="/spfm"
+              className="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors"
+              onClick={handleLinkClick}
+            >
               SwahiliPotFM
             </Link>
-            <BlogLink />
-            <YouthDatabase />
-            <div className="flex items-center space-x-2">
+            <BlogLink onLinkClick={handleLinkClick} />
+            <YouthDatabase onLinkClick={handleLinkClick} />
+            <div className="flex items-center space-x-4">
               <ThemeToggle />
-              <DonateBtn />
-              <MenuCTA />
+              <DonateBtn onLinkClick={handleLinkClick} />
+              <MenuCTA onLinkClick={handleLinkClick} />
             </div>
-          </nav>
-          
+          </div>
+
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="lg:hidden flex items-center space-x-4">
             <ThemeToggle />
-            <button 
-              className="p-2"
+            <button
               onClick={toggleMenu}
+              className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               aria-label="Toggle menu"
             >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-6 w-6" 
-                fill="none" 
-                viewBox="0 0 24 24" 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={
+                    isMenuOpen
+                      ? 'M6 18L18 6M6 6l12 12'
+                      : 'M4 6h16M4 12h16M4 18h16'
+                  }
                 />
               </svg>
             </button>
           </div>
-        </div>
-        
+        </nav>
+
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700 pt-4">
+          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700 pt-4">
             <nav className="flex flex-col space-y-4">
-              <AboutMenu />
-              <DepartmentMenu />
-              <ProgramMenu />
-              <Link href="/adverts" className="hover:text-primary dark:hover:text-blue-400">
+              <div onClick={handleLinkClick}>
+                <AboutMenu isOpen={true} onLinkClick={handleLinkClick} />
+              </div>
+              <div onClick={handleLinkClick}>
+                <DepartmentMenu isOpen={true} onLinkClick={handleLinkClick} />
+              </div>
+              <div onClick={handleLinkClick}>
+                <ProgramMenu isOpen={true} onLinkClick={handleLinkClick} />
+              </div>
+              <Link
+                href="/adverts"
+                className="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors"
+                onClick={handleLinkClick}
+              >
                 Adverts
               </Link>
-              <Link href="/spfm" className="hover:text-primary dark:hover:text-blue-400">
+              <Link
+                href="/spfm"
+                className="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors"
+                onClick={handleLinkClick}
+              >
                 SwahiliPotFM
               </Link>
-              <BlogLink />
-              <YouthDatabase />
-              <DonateBtn />
-              <MenuCTA />
+              <BlogLink onLinkClick={handleLinkClick} />
+              <YouthDatabase onLinkClick={handleLinkClick} />
+              <DonateBtn onLinkClick={handleLinkClick} />
+              <MenuCTA onLinkClick={handleLinkClick} />
             </nav>
           </div>
         )}
