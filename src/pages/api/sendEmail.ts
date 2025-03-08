@@ -27,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const mailOptions = {
     from: email,  // Sender's email (from the form input)
     to: 'ianmuriuki.inc@gmail.com',  // Receiver email
-    subject: `New Submission from ${firstName} ${lastName}`,
+    subject: `You have a new submission from ${firstName} ${lastName}`,
     html: `
       <h3>New Form Submission</h3>
       <p><strong>Name:</strong> ${firstName} ${lastName}</p>

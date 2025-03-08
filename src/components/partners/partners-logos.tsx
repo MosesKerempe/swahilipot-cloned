@@ -9,7 +9,7 @@ export const partners = [
   { name: "NGOsource", logo: "/partners/ngosource.webp", link: "https://www.ngosource.org" },
   { name: "Mastercard Foundation", logo: "/partners/mastercard-foundation.webp", link: "https://mastercardfoundation.org" },
   { name: "Liquid Intelligent Technologies", logo: "/partners/liquid.webp", link: "https://www.liquid.tech" },
-  { name: "National Museums of Kenya", logo: "/partners/national-museums.webp", link: "https://museums.or.ke" },
+  // { name: "National Museums of Kenya", logo: "/partners/national-museums.webp", link: "https://museums.or.ke" },
   { name: "Mombasa County", logo: "/partners/county.webp", link: "https://mombasa.go.ke" },
   { name: "Absa", logo: "/partners/absa-logo-red.webp", link: "https://www.absabank.co.ke" },
   { name: "Conrad Hilton Foundation", logo: "/partners/conradhiltonfoundation.webp", link: "https://www.hiltonfoundation.org" },
