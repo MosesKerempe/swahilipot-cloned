@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Attachment() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-orange-100">
       <div className="container-custom mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Attachment & Internship Opportunities</h2>
@@ -21,7 +21,7 @@ export default function Attachment() {
             <ul className="space-y-3 mb-6">
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span>Flexible duration (3-6 months)</span>
+                <span>Flexible duration (3-4 months)</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
@@ -31,10 +31,7 @@ export default function Attachment() {
                 <span className="text-primary mr-2">•</span>
                 <span>Mentorship from professionals</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span>Certificate upon completion</span>
-              </li>
+            
             </ul>
             <Link href="/about/work-with-us" className="text-primary font-medium hover:underline">
               Apply for Attachment →
@@ -60,11 +57,7 @@ export default function Attachment() {
                 <span className="text-primary mr-2">•</span>
                 <span>Networking with industry professionals</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span>Potential for permanent roles</span>
-              </li>
-            </ul>
+                </ul>
             <Link href="/about/work-with-us" className="text-primary font-medium hover:underline">
               Apply for Internship →
             </Link>

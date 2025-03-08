@@ -15,11 +15,11 @@ const Partners = () => {
   const sliderSettings = {
     dots: false,
     infinite: true,
-    speed: 300, // Increased speed
-    slidesToShow: 4, // Keeps the number of logos in a line
+    speed: 300, // Smooth transition speed
+    slidesToShow: 4, // Number of logos visible in a row
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000, // Increased speed of transition
+    autoplaySpeed: 2000, // Transition speed for autoplay
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 3 } },
       { breakpoint: 768, settings: { slidesToShow: 2 } },
@@ -28,13 +28,17 @@ const Partners = () => {
   };
 
   return (
-    <div className="partners-section">
-      <h2 className="partners-title">Our Partners</h2>
+    <div className="partners-section py-16 px-4">
+      <h2 className="partners-title text-3xl font-bold text-center mb-12">Our Partners</h2>
       <Slider {...sliderSettings} className="partners-slider">
         {partners.map((partner: Partner, index: number) => (
-          <div key={index} className="partner-slide">
+          <div key={index} className="partner-slide flex justify-center">
             <a href={partner.link} target="_blank" rel="noopener noreferrer">
-              <img src={partner.logo} alt={partner.name} className="partner-logo" />
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="partner-logo w-auto h-20 object-contain mx-auto"
+              />
             </a>
           </div>
         ))}

@@ -5,29 +5,29 @@ export default function Events() {
   const events = [
     {
       title: "Tech Hackathon 2025",
-      date: "March 15-17, 2025",
+      date: "Coming Soon",
       description: "A 48-hour coding challenge to solve local community problems.",
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      image: "/images/hackathon.png",
       link: "/programs/events"
     },
     {
       title: "Women in Tech Summit",
-      date: "April 5, 2025",
+      date: "Coming Soon",
       description: "Celebrating and empowering women in technology fields.",
-      image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      image: "/images/womentech.png",
       link: "/programs/events"
     },
     {
       title: "Youth Innovation Showcase",
-      date: "May 20, 2025",
-      description: "Showcasing innovative projects by young entrepreneurs.",
-      image: "https://images.unsplash.com/photo-1559223607-a43c990c692c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      date: "Coming Soon",
+      description: "Working towards showcasing solutions to save the world from climate change.",
+      image: "/images/youthinnovation.png",
       link: "/programs/events"
     }
   ];
 
   return (
-    <section className="py-16 bg-light">
+    <section className="py-16 bg-blue-50">
       <div className="container-custom mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Upcoming Events</h2>

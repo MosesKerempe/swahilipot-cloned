@@ -5,19 +5,19 @@ export default function SwahilipotPillar() {
     {
       title: "Technology",
       description: "We provide access to technology resources, training, and mentorship to help youth develop digital skills and create innovative solutions.",
-      image: "https://images.unsplash.com/photo-1581092921461-7d65ca45393a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "/images/mwanakupona.jpg",
       link: "/departments/technology"
     },
     {
       title: "Arts & Culture",
       description: "We celebrate and promote local arts and culture through various programs, exhibitions, and performances that showcase creative talent.",
-      image: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "/images/cultureimage.png",
       link: "/departments/creatives"
     },
     {
       title: "Community Development",
       description: "We foster a supportive community where youth can collaborate, learn from each other, and work together to address local challenges.",
-      image: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "/images/communitydev.png",
       link: "/departments/community"
     }
   ];
