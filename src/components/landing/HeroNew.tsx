@@ -39,10 +39,10 @@ const HeroNew = () => {
   ];
 
   return (
-    <div className="w-full h-[500px] relative overflow-hidden">
+    <div className="w-full h-[700px] relative overflow-hidden">
       <Slider {...settings}>
         {slides.map((slide) => (
-          <div key={slide.id} className="relative w-full h-[500px]">
+          <div key={slide.id} className="relative w-full h-[700px]">
             {/* ✅ Fixed Image Component */}
             <Image
               src={slide.image}
