@@ -3,14 +3,14 @@ interface TeamCardProps {
   title: string;
   bio: string;
   image: string;
-  social?: {
-    twitter?: string;
-    linkedin?: string;
-    email?: string;
+  // social?: {
+  //   twitter?: string;
+  //   linkedin?: string;
+  //   email?: string;
   };
-}
 
-export default function TeamCard({ name, title, bio, image, social }: TeamCardProps) {
+
+export default function TeamCard({ name, title, bio, image, }: TeamCardProps) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <div className="h-64 overflow-hidden">
@@ -25,7 +25,7 @@ export default function TeamCard({ name, title, bio, image, social }: TeamCardPr
         <p className="text-primary font-medium mb-4">{title}</p>
         <p className="text-gray-700 mb-4">{bio}</p>
         
-        {social && (
+        {/* {social && (
           <div className="flex space-x-4">
             {social.twitter && (
               <a href={social.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary">
@@ -51,7 +51,7 @@ export default function TeamCard({ name, title, bio, image, social }: TeamCardPr
               </a>
             )}
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
