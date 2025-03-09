@@ -50,7 +50,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white dark:bg-gray-900 transition-all duration-300 ${
+      className={`sticky top-0 z-50 bg-orange-100 dark:bg-gray-900 transition-all duration-300 ${
         isScrolled ? 'shadow-md py-2' : 'py-4'
       }`}
     >
@@ -62,7 +62,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {/* About Dropdown */}
+            {/* About Dropdown The dropdown will automatically select about us as the active page */}
             <div
               onMouseEnter={() => handleMouseEnter('about')}
               onMouseLeave={handleMouseLeave}

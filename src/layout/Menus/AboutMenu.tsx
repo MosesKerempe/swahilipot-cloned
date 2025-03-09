@@ -30,9 +30,9 @@ export default function AboutMenu({ isOpen, onLinkClick }: AboutMenuProps) {
     { title: "About Us", path: "/about", description: "Learn about our mission, vision, and impact" },
     { title: "Our Origin", path: "/about/origin", description: "Discover how SwahiliPot Hub began" },
     { title: "Board Members", path: "/about/board-members", description: "Meet our board of directors" },
-    { title: "Management Team", path: "/about/management-team", description: "Our leadership team" },
-    { title: "Media", path: "/about/media", description: "Press releases and media resources" },
-    { title: "Sponsors", path: "/about/sponsors", description: "Our partners and supporters" },
+    // { title: "Management Team", path: "/about/management-team", description: "Our leadership team" },
+    // { title: "Media", path: "/about/media", description: "Press releases and media resources" },
+    // { title: "Sponsors", path: "/about/sponsors", description: "Our partners and supporters" },
     { title: "Work With Us", path: "/about/work-with-us", description: "Career opportunities and collaboration" }
   ];
 
