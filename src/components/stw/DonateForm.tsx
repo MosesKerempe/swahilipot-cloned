@@ -46,10 +46,10 @@ export default function DonateForm() {
   };
 
   return (
-    <section className="py-16 bg-white dark:bg-gray-800">
+    <section className="py-16 bg-blue-50 dark:bg-gray-800">
       <div className="container-custom mx-auto">
         <div className="max-w-3xl mx-auto">
-          <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+          <div className="bg-orange-50 dark:bg-gray-700 p-8 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-6 text-center">Make a Donation</h2>
             
             <form onSubmit={handleSubmit}>
@@ -169,53 +169,20 @@ export default function DonateForm() {
                 </div>
               </div>
               
-              <div className="mb-8">
-                <h3 className="text-lg font-semibold mb-4">Payment Method</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="bg-light dark:bg-gray-600 p-4 rounded-md text-center cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-500">
-                    <div className="text-2xl mb-2">💳</div>
-                    <div className="font-medium">Credit/Debit Card</div>
-                  </div>
-                  <div className="bg-light dark:bg-gray-600 p-4 rounded-md text-center cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-500">
-                    <div className="text-2xl mb-2">📱</div>
-                    <div className="font-medium">M-Pesa</div>
-                  </div>
-                  <div className="bg-light dark:bg-gray-600 p-4 rounded-md text-center cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-500">
-                    <div className="text-2xl mb-2">🏦</div>
-                    <div className="font-medium">Bank Transfer</div>
-                  </div>
-                </div>
-              </div>
+    
               
               <div className="text-center">
-                <button type="submit" className="btn px-8 py-3">
-                  Complete Donation
-                </button>
-              </div>
+        <a href="https://flutterwave.com/pay/fsxxrsiu1hvk" target="_blank" rel="noopener noreferrer">
+      <button type="button" className="btn px-8 py-3">
+      Complete Donation
+      </button>
+  </a>
+</div>
+
             </form>
           </div>
           
-          <div className="mt-8 bg-light dark:bg-gray-700 p-6 rounded-lg">
-            <h3 className="text-lg font-semibold mb-4">How Your Donation Helps</h3>
-            <ul className="space-y-2">
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span className="text-gray-700 dark:text-gray-300">KES 1,000 provides learning materials for one student</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span className="text-gray-700 dark:text-gray-300">KES 5,000 sponsors a woman for a one-day workshop</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span className="text-gray-700 dark:text-gray-300">KES 10,000 provides a month of mentorship for five women</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span className="text-gray-700 dark:text-gray-300">KES 50,000 funds a coding bootcamp for a class of 20 women</span>
-              </li>
-            </ul>
-          </div>
+      
         </div>
       </div>
     </section>

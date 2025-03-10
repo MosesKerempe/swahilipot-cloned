@@ -1,22 +1,24 @@
 import React from 'react';
 
 export default function CampusAmbassadorPage() {
-  return (
+  
+      return (
     <>
-      <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
-        <div className="container-custom mx-auto">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Campus Ambassador Program
-            </h1>
-            <p className="text-xl mb-8">
-              Connecting university students with SwahiliPot Hub to promote innovation and technology on campus.
-            </p>
-          </div>
+    <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
+      <div className="container-custom mx-auto text-center">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-[calc(4rem*0.5)] md:text-[calc(6rem*0.5)] font-bold mb-6">
+            Campus Ambassador Program
+          </h1>
+          <p className="text-[calc(1.25rem*0.8)] mb-8">
+           Connecting university students with Swahilipot Hub to promote innovation and technology on campus.
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
+  
       
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16 bg-blue-50 dark:bg-gray-900">
         <div className="container-custom mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
             <div>
@@ -153,7 +155,7 @@ export default function CampusAmbassadorPage() {
             </div>
           </div>
           
-          <div className="bg-light dark:bg-gray-800 p-8 rounded-lg mb-16">
+          {/* <div className="bg-light dark:bg-gray-800 p-8 rounded-lg mb-16">
             <h2 className="text-3xl font-bold mb-6 text-center">Our Impact</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
               <div>
@@ -173,7 +175,7 @@ export default function CampusAmbassadorPage() {
                 <p className="text-gray-700 dark:text-gray-300">Students Reached</p>
               </div>
             </div>
-          </div>
+          </div> */}
           
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-center">Become a Campus Ambassador</h2>
@@ -181,7 +183,7 @@ export default function CampusAmbassadorPage() {
               If you're a university student passionate about technology, innovation, arts, or entrepreneurship, we invite you to apply to become a SwahiliPot Hub Campus Ambassador.
             </p>
             
-            <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+            <div className="bg-orange-50 dark:bg-gray-700 p-8 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4">Eligibility Criteria</h3>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start">
