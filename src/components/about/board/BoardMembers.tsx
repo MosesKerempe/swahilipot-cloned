@@ -4,45 +4,45 @@ export default function BoardMembers() {
   // This would typically come from your data file or CMS
   const boardMembers = [
     {
-      name: "Mr . Mahmood Noor",
-      title: "Founder & Chief Mentor",
-      bio: "Dr. Smith is a renowned technology expert with over 20 years of experience in the industry. She brings strategic vision and leadership to the board.",
+      name: "Mr .Mahmoud Noor",
+      title: "Founder &  Chief Mentor",
+      bio: "Mr. Mahmoud is the Founder of Swahilipot Hub Foundation .",
       image: "/images/mentor.jpg",
       
     },
     {
-      name: "John Doe",
-      title: "Vice Chairperson",
-      bio: "John has extensive experience in community development and youth empowerment programs across East Africa.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      name: "Zuhra Shariff",
+      title: "Head of HR & Admin",
+      bio: "Ms. Zuhra is the head of Human Resources at Swahilipot Hub.",
+      image: "/images/zuhra.jpg",
      
     },
     {
-      name: "Mary Johnson",
+      name: "To Name",
       title: "Secretary",
-      bio: "Mary is a legal expert specializing in technology policy and governance, ensuring SwahiliPot Hub maintains the highest standards.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      bio: "",
+      image: "/images/kiplangat.jpg",
    
     },
     {
-      name: "Robert Kimani",
-      title: "Treasurer",
-      bio: "Robert brings financial expertise and business acumen to the board, helping guide SwahiliPot Hub's sustainable growth.",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      name: "Chris Achinga",
+      title: "Technology Lead - Dude",
+      bio: "Chris is the maker of softwares, and Father of Dragons at Swahilipot Hub .",
+      image: "/images/achinga.jpeg",
      
     },
     {
-      name: "Sarah Ochieng",
+      name: "Board Member 5 ",
       title: "Board Member",
-      bio: "Sarah is a respected arts and culture advocate who helps strengthen SwahiliPot Hub's creative programs.",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      bio: "......................SwahiliPot Hub Foundation. ",
+      image: "/images/mtu.png",
      
     },
     {
-      name: "David Mwangi",
+      name: "Board Member 6",
       title: "Board Member",
-      bio: "David is a tech entrepreneur who provides valuable insights on innovation and startup development.",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      bio: ".................Swahilipot Hub Foundation.",
+      image: "/images/mtu.png",
      
     }
   ];
