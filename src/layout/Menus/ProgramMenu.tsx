@@ -77,8 +77,7 @@ const ProgramMenu: React.FC<ProgramMenuProps> = ({ isOpen, onLinkClick }) => {
                 { href: '/programs/case-management', label: 'Case Management' },
                 { href: '/programs/events', label: 'Events' },
                 { href: '/programs/campus_ambassador', label: 'Campus Ambassador' },
-                { href: '/programs/mombasa-tourism-innovation-lab', label: 'Mombasa Tourism Innovation Lab' },
-                { href: '/programs/young-business-executive-fellowship', label: 'Young Business Executive Fellowship' },
+                { href: '/programs/mombasa-tourism-innovation-lab', label: 'Mombasa Tourism Innovation Lab' }
               ].map(({ href, label }) => (
                 <Link
                   key={href}
