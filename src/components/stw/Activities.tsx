@@ -1,7 +1,29 @@
 import React from 'react';
 import Link from 'next/link';
 
+// Sample programs data array
+const programs = [
+  {
+    icon: '💻',  // Replace with your icon (could be an image or font icon)
+    title: 'Tech Workshops',
+    description: 'Learn new skills with hands-on workshops led by industry experts.',
+    link: '/programs/tech-workshops',
+  },
+  {
+    icon: '🎓',
+    title: 'Mentorship Programs',
+    description: 'Connect with experienced mentors to guide you on your tech journey.',
+    link: '/programs/mentorship',
+  },
+  {
+    icon: '💡',
+    title: 'Innovation Challenges',
+    description: 'Participate in exciting challenges that push the boundaries of technology.',
+    link: '/programs/innovation-challenges',
+  },
+];
 
+const ProgramsSection = () => {
   return (
     <section className="py-16 bg-light dark:bg-gray-800">
       <div className="container-custom mx-auto">
@@ -11,7 +33,7 @@ import Link from 'next/link';
             Swahili Tech Women offers a variety of programs and activities designed to support women at every stage of their tech journey.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program, index) => (
             <div key={index} className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
@@ -24,7 +46,7 @@ import Link from 'next/link';
             </div>
           ))}
         </div>
-        
+
         <div className="mt-16 text-center">
           <Link href="/stwdonate/membership" className="btn px-8 py-3">
             Join Swahili Tech Women
@@ -33,3 +55,6 @@ import Link from 'next/link';
       </div>
     </section>
   );
+};
+
+export default ProgramsSection;
