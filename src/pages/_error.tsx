@@ -1,5 +1,9 @@
 import { NextPage } from 'next';
-import { ErrorProps } from 'next/error';
+import { NextPageContext } from 'next';
+
+interface ErrorProps {
+  statusCode: number;
+}
 
 const Error: NextPage<ErrorProps> = ({ statusCode }) => {
   return (
@@ -22,9 +26,10 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
   );
 };
 
-Error.getInitialProps = ({ res, err }) => {
+// TypeScript is expecting the return value to be `ErrorProps` and not `number | undefined`.
+Error.getInitialProps = ({ res, err }: NextPageContext) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
-  return { statusCode };
+  return { statusCode: statusCode ?? 404 }; // Ensure the statusCode is always a number
 };
 
 export default Error;
