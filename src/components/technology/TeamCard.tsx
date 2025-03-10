@@ -5,15 +5,10 @@ interface TeamCardProps {
   title: string;
   image: string;
   bio: string;
-  social?: {
-    twitter?: string;
-    linkedin?: string;
-    github?: string;
-    email?: string;
-  };
+ 
 }
 
-export default function TeamCard({ name, title, image, bio, social }: TeamCardProps) {
+export default function TeamCard({ name, title, image, bio, }: TeamCardProps) {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl border-2 border-blue-100 shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
       {/* Image Container */}
@@ -33,7 +28,7 @@ export default function TeamCard({ name, title, image, bio, social }: TeamCardPr
         <p className="text-primary font-medium text-lg mb-3 text-center">{title}</p>
         <p className="text-gray-600 dark:text-gray-300 text-sm text-center">{bio}</p>
 
-        {/* Social Links */}
+        {/* Social Links
         {social && (
           <div className="flex justify-center space-x-4 mt-4">
             {social.twitter && (
@@ -60,7 +55,7 @@ export default function TeamCard({ name, title, image, bio, social }: TeamCardPr
               </a>
             )}
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

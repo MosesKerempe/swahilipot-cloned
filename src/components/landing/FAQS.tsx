@@ -23,7 +23,7 @@ export default function FAQS() {
     },
     {
       question: "How can I support SwahiliPot Hub?",
-      answer: "You can support us by volunteering, becoming a mentor, partnering with us on projects, sponsoring our programs, or making a donation. Every contribution helps us expand our impact and reach more youth in East Africa."
+      answer: "You can support us by volunteering, becoming a mentor, partnering with us on projects, sponsoring our programs, or making a donation. Every contribution helps us expand our impact and reach more youth in the Coastal regions."
     },
     {
       question: "Can I visit Swahilipot Hub as a visitor?",

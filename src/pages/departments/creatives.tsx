@@ -1,15 +1,15 @@
 import React from 'react';
 import PageHero from '@/components/engineering/PageHero';
-import PageAbout from '@/components/engineering/PageAbout';
-import Stats from '@/components/engineering/Stats';
-import Roles from '@/components/engineering/Roles';
-import Team from '@/components/engineering/Team';
+import PageAbout from '@/components/creatives/PageAbout';
+import Stats from '@/components/creatives/Stats';
+import Roles from '@/components/creatives/Roles';
+import Team from '@/components/creatives/Team';
 
 export default function CreativesDepartment() {
-  // Department data
-  const departmentDescription = "The Creatives Department at SwahiliPot Hub celebrates and promotes arts and culture through various programs, exhibitions, and performances. Our team works to nurture creative talent, preserve cultural heritage, and provide platforms for artistic expression in our community.";
+  // Department details
+  const departmentDescription = "Welcome to the Creative Department, where imagination meets action and ideas come to life! We're not your average department; in fact, we like to think of ourselves as the heartbeat of the hub. We're the ones who bring color, vibrancy, and a touch of magic to everything we do. Get ready to embark on a journey where innovation meets excitement, where ideas take flight, and where the possibilities are limitless. Join us as we explore the intersection of creativity and social issues and empower artists to make a difference. We are excited to introduce you to the diverse initiatives and programs we offer.";
   
-  const departmentImage = "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
+  const departmentImage = "/images/cultureimage.png";
   
   const activities = [
     "Art Exhibitions",
@@ -21,77 +21,51 @@ export default function CreativesDepartment() {
   ];
   
   const stats = [
-    { label: "Artists Supported", value: "300+" },
+    { label: "Artists Supported", value: "100+" },
     { label: "Exhibitions Hosted", value: "50+" },
-    { label: "Workshops Conducted", value: "120+" },
-    { label: "Cultural Events", value: "80+" }
+    { label: "Workshops Conducted", value: "50+" },
+    { label: "Cultural Events", value: "20+" }
   ];
   
   const roles = [
     {
-      title: "Arts & Culture Manager",
-      description: "Oversees all creative programs and initiatives at SwahiliPot Hub.",
-      requirements: [
-        "Background in arts, culture, or related field",
-        "Experience in program development and management",
-        "Knowledge of East African arts and cultural practices",
-        "Strong leadership and communication skills"
-      ]
+      title: "Theatre Zone",
+      description: "If you have a passion for acting, our Theatre Zone program is the perfect place to nurture your talent. Through comprehensive training and educational initiatives, we empower aspiring actors to shine on both stage and screen. Join us on this transformative journey and unlock your full potential.",
+      requirements: ["Acting Coach", "Theatre Director"]
     },
     {
-      title: "Visual Arts Coordinator",
-      description: "Manages visual arts programs, exhibitions, and workshops.",
-      requirements: [
-        "Experience in visual arts or gallery management",
-        "Curation and exhibition design skills",
-        "Knowledge of various visual art forms",
-        "Project management abilities"
-      ]
+      title: "SoundPot",
+      description: "At SoundPot, we believe that every voice deserves to be heard. Our dedicated team of mentors and trainers will guide you on a melodic journey of self-expression and artistic growth. Whether you're a singer, poet, or voice artist, join us and let your voice resound in the hearts of others.",
+      requirements: ["Vocal Coach", "Sound Engineer"]
     },
     {
-      title: "Performing Arts Coordinator",
-      description: "Coordinates music, dance, theater, and other performing arts programs.",
-      requirements: [
-        "Background in performing arts",
-        "Event planning and production experience",
-        "Knowledge of various performance traditions",
-        "Strong organizational skills"
-      ]
+      title: "Pot Culture",
+      description: "Immerse yourself in the vibrant world of arts at Pot Culture, our periodic event that celebrates creativity in all its forms. Experience captivating performances of dance, music, and poetry as we showcase the rich tapestry of artistic expression within our community. Prepare to be inspired and amazed.",
+      requirements: ["Event Coordinator", "Creative Curator"]
     }
   ];
   
   const teamMembers = [
     {
-      name: "Sarah Ochieng",
+      name: "Person one",
       title: "Arts & Culture Manager",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: "Sarah brings her extensive background in arts to develop and manage our creative programs and cultural initiatives. She is dedicated to preserving and promoting local cultural heritage.",
-      social: {
-        twitter: "https://twitter.com/sarahochieng",
-        email: "sarah.ochieng@swahilipothub.co.ke"
-      }
+      image: "/images/mtu.png",
+      bio: "Person one brings her extensive background in arts to develop and manage our creative programs and cultural initiatives. She is dedicated to preserving and promoting local cultural heritage.",
+     
     },
     {
-      name: "Daniel Mutua",
+      name: "Person two",
       title: "Visual Arts Coordinator",
-      image: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: "Daniel manages our visual arts programs, exhibitions, and workshops. He is passionate about providing platforms for artists to showcase their work and develop their skills.",
-      social: {
-        instagram: "https://instagram.com/danielmutua",
-        linkedin: "https://linkedin.com/in/danielmutua",
-        email: "daniel.mutua@swahilipothub.co.ke"
-      }
+      image: "/images/mtu.png",
+      bio: "Person two manages our visual arts programs, exhibitions, and workshops. He is passionate about providing platforms for artists to showcase their work and develop their skills.",
+     
     },
     {
-      name: "Fatima Ali",
+      name: "Person Three",
       title: "Performing Arts Coordinator",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: "Fatima coordinates our music, dance, theater, and other performing arts programs. She believes in the power of performance to preserve culture and create social change.",
-      social: {
-        twitter: "https://twitter.com/fatimaali",
-        instagram: "https://instagram.com/fatimaali",
-        email: "fatima.ali@swahilipothub.co.ke"
-      }
+      image: "/images/mtu.png",
+      bio: "Person three coordinates our music, dance, theater, and other performing arts programs. She believes in the power of performance to preserve culture and create social change.",
+    
     }
   ];
 
@@ -117,6 +91,7 @@ export default function CreativesDepartment() {
   );
 }
 
+// Static Props for SEO
 export async function getStaticProps() {
   return {
     props: {

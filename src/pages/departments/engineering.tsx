@@ -9,7 +9,7 @@ export default function EngineeringDepartment() {
   // Department data
   const departmentDescription = "We are the Engineering Team under the Technology Department at Swahilipot Hub Foundation, dedicated to developing and maintaining the organization's platforms as well as manage and configure the network infrastructure.";
   
-  const departmentImage = "/images/engineering.jpg";
+  const departmentImage = "/images/engineeringsvg.png";
   
   const activities = [
     "Software Development",

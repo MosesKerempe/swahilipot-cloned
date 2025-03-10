@@ -1,15 +1,15 @@
 import React from 'react';
 import PageHero from '@/components/engineering/PageHero';
-import PageAbout from '@/components/engineering/PageAbout';
-import Stats from '@/components/engineering/Stats';
-import Roles from '@/components/engineering/Roles';
-import Team from '@/components/engineering/Team';
+import PageAbout from '@/components/communication/PageAbout';
+import Stats from '@/components/communication/Stats';
+import Roles from '@/components/communication/Roles';
+import Team from '@/components/communication/Team';
 
 export default function CommunicationsDepartment() {
   // Department data
   const departmentDescription = "The Communications Department at SwahiliPot Hub manages our messaging, media relations, and digital presence to share our story and impact with the world. Our team works to amplify the voices and achievements of our community, connect with stakeholders, and raise awareness about our programs and initiatives.";
   
-  const departmentImage = "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
+  const departmentImage = "/images/communicationsvg.png";
   
   const activities = [
     "Media Relations",
@@ -30,7 +30,7 @@ export default function CommunicationsDepartment() {
   const roles = [
     {
       title: "Communications Manager",
-      description: "Oversees all communications activities and strategies for SwahiliPot Hub.",
+      description: "Welcome to the Community Department at Swahilipot Hub! We are thrilled to have you join our vibrant community. Here, we believe in minding other people's business in the best way possible - by enabling community members to develop themselves and create an environment where talents can thrive and expertise can be shared.",
       requirements: [
         "Experience in communications or public relations",
         "Strong writing and editing skills",
@@ -40,7 +40,7 @@ export default function CommunicationsDepartment() {
     },
     {
       title: "Social Media Coordinator",
-      description: "Manages SwahiliPot Hub's presence across various social media platforms.",
+      description: "Remember, Swahilipot Hub is not just a physical building; it is the people who make up our community. Each and every member contributes to the vibrant tapestry of ideas, skills, and experiences that make our hub unique. Together, we can explore endless possibilities, support one another's growth, and make a positive impact on our society.",
       requirements: [
         "Experience with social media management",
         "Content creation skills",
@@ -50,7 +50,7 @@ export default function CommunicationsDepartment() {
     },
     {
       title: "Content Creator",
-      description: "Develops engaging content for SwahiliPot Hub's various communication channels.",
+      description: "At Swahilipot Hub, we prioritize the personal and professional development of our community members. We provide a platform for individuals to express their thoughts, ideas, and opinions. Through various programs, workshops, and resources, we aim to support the growth and development of our members.",
       requirements: [
         "Strong writing and storytelling abilities",
         "Photography and videography skills",
@@ -62,38 +62,28 @@ export default function CommunicationsDepartment() {
   
   const teamMembers = [
     {
-      name: "Grace Wanjiku",
+      name: "Person one",
       title: "Communications Manager",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: "Grace leads our communications strategy, sharing SwahiliPot Hub's story and impact with the world. She has a background in digital marketing and content creation.",
-      social: {
-        twitter: "https://twitter.com/gracewanjiku",
-        linkedin: "https://linkedin.com/in/gracewanjiku",
-        email: "grace.wanjiku@swahilipothub.co.ke"
-      }
+      image: "/images/mtu.png",
+      bio: "Person one leads our communications strategy, sharing SwahiliPot Hub's story and impact with the world. She has a background in digital marketing and content creation.",
+   
     },
     {
-      name: "Peter Njoroge",
+      name: "Person two",
       title: "Media Coordinator",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: "Peter manages media relations and coordinates SwahiliPot FM, our community radio station. He has experience in journalism and broadcasting.",
-      social: {
-        twitter: "https://twitter.com/peternjoroge",
-        linkedin: "https://linkedin.com/in/peternjoroge",
-        email: "peter.njoroge@swahilipothub.co.ke"
-      }
+      image: "/images/mtu.png",
+      bio: "Person two manages media relations and coordinates SwahiliPot FM, our community radio station. He has experience in journalism and broadcasting.",
+      
     },
-    {
-      name: "Amina Hassan",
+
+    {    
+      name: "Person three",
       title: "Content Creator",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: "Amina creates engaging content for our website, social media, and publications. She is passionate about storytelling and visual communication.",
-      social: {
-        instagram: "https://instagram.com/aminahassan",
-        linkedin: "https://linkedin.com/in/aminahassan",
-        email: "amina.hassan@swahilipothub.co.ke"
-      }
+      image: "/images/mtu.png",
+      bio: "Person three creates engaging content for our website, social media, and publications. She is passionate about storytelling and visual communication.",
+      
     }
+    
   ];
 
   return (

@@ -1,15 +1,15 @@
 import React from 'react';
 import PageHero from '@/components/engineering/PageHero';
-import PageAbout from '@/components/engineering/PageAbout';
-import Stats from '@/components/engineering/Stats';
-import Roles from '@/components/engineering/Roles';
-import Team from '@/components/engineering/Team';
+import PageAbout from '@/components/technology/PageAbout';
+import Stats from '@/components/technology/Stats';
+import Roles from '@/components/technology/Roles';
+import Team from '@/components/technology/Team';
 
 export default function TechnologyDepartment() {
   // Department data
   const departmentDescription = "The Technology Department at SwahiliPot Hub drives digital innovation and skills development through various programs, workshops, and initiatives. Our team works to empower youth with the technical skills and knowledge needed to thrive in the digital economy and create innovative solutions to local challenges.";
   
-  const departmentImage = "https://images.unsplash.com/photo-1581092921461-7d65ca45393a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
+  const departmentImage = "/images/technologysvg.png";
   
   const activities = [
     "Coding Bootcamps",
@@ -21,7 +21,7 @@ export default function TechnologyDepartment() {
   ];
   
   const stats = [
-    { label: "Youth Trained", value: "2,000+" },
+    { label: "Youth Trained", value: "1,000+" },
     { label: "Bootcamps Conducted", value: "30+" },
     { label: "Hackathons Organized", value: "15+" },
     { label: "Tech Projects Launched", value: "100+" }
@@ -29,71 +29,44 @@ export default function TechnologyDepartment() {
   
   const roles = [
     {
-      title: "Technology Director",
-      description: "Oversees all technology programs and initiatives at SwahiliPot Hub.",
-      requirements: [
-        "Experience in technology education or management",
-        "Strong technical background",
-        "Program development and implementation skills",
-        "Strategic thinking and leadership abilities"
-      ]
+      title: "Data and Research",
+      description: "Our Data and Research programs focus on data collection and analysis. Through partnerships with organizations like Decodis and UN Habitat, we provide opportunities for young people to earn a stipend and participate in this program. Over 100 youths have gained valuable skills in data collection and analysis through this initiative.",
+      requirements: ["Data collection skills", "Analytical mindset", "Basic knowledge of research methodologies"]
     },
     {
-      title: "Tech Programs Coordinator",
-      description: "Manages and coordinates various technology programs and events.",
-      requirements: [
-        "Experience in program coordination",
-        "Knowledge of technology education",
-        "Event planning and management skills",
-        "Strong organizational abilities"
-      ]
+      title: "Industrial Attachment",
+      description: "Our Industrial Attachment program offers a well-structured curriculum for attachés from various institutions to acquire industry-specific skills. Participants gain hands-on experience in fields such as web development, networking, and essential soft skills like working with young people and effective communication. We prioritize teaching 21st-century skills to equip participants for success.",
+      requirements: ["Enrollment in a relevant course", "Willingness to learn", "Basic understanding of industry tools"]
     },
     {
-      title: "Digital Skills Trainer",
-      description: "Develops and delivers training programs on various digital skills.",
-      requirements: [
-        "Technical expertise in relevant areas",
-        "Teaching or training experience",
-        "Curriculum development skills",
-        "Strong communication abilities"
-      ]
+      title: "Campus Ambassador",
+      description: "Through our Campus Ambassador program, we collaborate closely with six tertiary institutions. Our ambassadors share information about the opportunities and benefits that Swahilipot provides to young people. In return, we offer support to these ambassadors through workshops, meetups, online courses, and hackathons. This program nurtures young talents and fosters a vibrant tech community.",
+      requirements: ["Strong communication skills", "Passion for technology", "Ability to engage with peers effectively"]
     }
   ];
   
+    
   const teamMembers = [
     {
-      name: "Sarah Ochieng",
+      name: "Person one",
       title: "Technology Director",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: "Sarah leads our technology department with a passion for digital innovation and education. She has extensive experience in technology program development and implementation.",
-      social: {
-        twitter: "https://twitter.com/sarahochieng",
-        linkedin: "https://linkedin.com/in/sarahochieng",
-        email: "sarah.ochieng@swahilipothub.co.ke"
-      }
+      image: "/images/mtu.png",
+      bio: "Person one leads our technology department with a passion for digital innovation and education. She has extensive experience in technology program development and implementation.",
+    
     },
     {
-      name: "John Maina",
+      name: "Person two",
       title: "Tech Programs Coordinator",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: "John coordinates our various technology programs and events, ensuring they run smoothly and achieve their objectives. He is passionate about creating opportunities for youth in tech.",
-      social: {
-        twitter: "https://twitter.com/johnmaina",
-        linkedin: "https://linkedin.com/in/johnmaina",
-        github: "https://github.com/johnmaina",
-        email: "john.maina@swahilipothub.co.ke"
-      }
+      image: "/images/mtu.png",
+      bio: "Person two coordinates our various technology programs and events, ensuring they run smoothly and achieve their objectives. He is passionate about creating opportunities for youth in tech.",
+      
     },
     {
-      name: "Grace Wanjiku",
+      name: "Person three",
       title: "Digital Skills Trainer",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      bio: "Grace develops and delivers training programs on various digital skills, from basic computer literacy to advanced programming. She believes in making technology education accessible to all.",
-      social: {
-        linkedin: "https://linkedin.com/in/gracewanjiku",
-        github: "https://github.com/gracewanjiku",
-        email: "grace.wanjiku@swahilipothub.co.ke"
-      }
+      image: "/images/mtu.png",
+      bio: "Person three develops and delivers training programs on various digital skills, from basic computer literacy to advanced programming. She believes in making technology education accessible to all.",
+   
     }
   ];
 

@@ -76,9 +76,7 @@ export default function Footer() {
               <li>
                 <Link href="/programs/campus_ambassador" className="hover:text-yellow-400">Campus Ambassador</Link>
               </li>
-              <li>
-                <Link href="/programs/young-business-executive-fellowship" className="hover:text-yellow-400">YBEF</Link>
-              </li>
+             
             </ul>
           </div>
 
@@ -102,7 +100,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} SwahiliPot Hub Foundation. Mombasa, Kenya. All rights reserved.
           </p>
           <p className="text-center text-sm mt-2">
-            Proudly made by <a href="https://github.com/ianmuriuki" className="hover:text-yellow-400" target="_blank" rel="noopener noreferrer">The Alchemists</a>
+            Proudly made by <a href="https://github.com/ianmuriuki" className="hover:text-yellow-400" target="_blank" rel="noopener noreferrer">The Alchemy</a>
           </p>
 
         </div>
