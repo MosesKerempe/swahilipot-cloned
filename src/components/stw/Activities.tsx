@@ -7,7 +7,7 @@ const programs = [
     icon: '💻',  // Replace with your icon (could be an image or font icon)
     title: 'Tech Workshops',
     description: 'Learn new skills with hands-on workshops led by industry experts.',
-    link: '/programs/tech-workshops',
+    link: '/programs/tech-workshop',
   },
   {
     icon: '🎓',
