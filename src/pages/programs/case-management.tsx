@@ -19,7 +19,7 @@ export default function CaseManagementPage() {
 
 
       
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16 bg-blue-50 dark:bg-gray-900">
         <div className="container-custom mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
             <div>
@@ -112,41 +112,7 @@ export default function CaseManagementPage() {
             </div>
           </div>
           
-          <div className="bg-primary text-white p-8 rounded-lg mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Our Impact</h2>
-                <p className="mb-6">
-                  Since launching our Case Management Program, we've made a significant difference in the lives of youth in our community:
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <span className="mr-2">✓</span>
-                    <span>Served over 300 youth facing various challenges</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">✓</span>
-                    <span>Helped 150+ youth secure employment or educational opportunities</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">✓</span>
-                    <span>Connected youth with 20+ partner organizations for specialized support</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">✓</span>
-                    <span>Provided over 1,000 hours of one-on-one mentorship and guidance</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-white bg-opacity-10 p-6 rounded-lg">
-                <blockquote className="italic mb-4">
-                  "The Case Management Program at SwahiliPot Hub changed my life. My case manager helped me navigate challenges, connect with resources, and develop the skills I needed to pursue my education and career goals. I'm now employed and working toward a better future."
-                </blockquote>
-                <div className="font-semibold">- John, Program Participant</div>
-              </div>
-            </div>
-          </div>
+          
           
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Get Involved</h2>
