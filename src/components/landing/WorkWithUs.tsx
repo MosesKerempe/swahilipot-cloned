@@ -18,7 +18,7 @@ export default function WorkWithUs() {
       title: "Sponsor",
       description: "Support our programs financially to help us reach more youth.",
       icon: "💰",
-      link: "/about/sponsors"
+      link: "/stwdonate/support-stw"
     },
     {
       title: "Join Our Team",
