@@ -2,18 +2,18 @@
   {
     "id": "tech-hackathon-2025",
     "title": "Tech Hackathon 2025",
-    "date": "March 15-17, 2025",
+    "date": "Coming soon",
     "time": "9:00 AM - 5:00 PM",
     "location": "SwahiliPot Hub, Mombasa",
     "description": "A 48-hour coding challenge to solve local community problems. Join teams of developers, designers, and innovators to create solutions that address real challenges in our community.",
-    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    "image": "/images/hackathon.png",
     "category": "Technology",
     "featured": true,
     "registration": {
       "required": true,
-      "deadline": "March 10, 2025",
-      "fee": "KES 500",
-      "link": "/programs/events/tech-hackathon-2025"
+      "deadline": "chill",
+      "fee": "Free",
+      "link": "/programs/events"
     },
     "details": [
       "Open to participants of all skill levels",
@@ -26,18 +26,18 @@
   {
     "id": "women-in-tech-summit",
     "title": "Women in Tech Summit",
-    "date": "April 5, 2025",
+    "date": "Coming Soon",
     "time": "10:00 AM - 4:00 PM",
     "location": "SwahiliPot Hub, Mombasa",
     "description": "Celebrating and empowering women in technology fields. This summit brings together women in tech to share experiences, learn from each other, and inspire the next generation of female technologists.",
-    "image": "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    "image": "/images/womentech.png",
     "category": "Women in Tech",
     "featured": true,
     "registration": {
       "required": true,
-      "deadline": "April 1, 2025",
+      "deadline": "chill",
       "fee": "Free",
-      "link": "/programs/events/women-in-tech-summit"
+      "link": "/programs/events"
     },
     "details": [
       "Keynote speeches from industry leaders",
@@ -50,18 +50,18 @@
   {
     "id": "youth-innovation-showcase",
     "title": "Youth Innovation Showcase",
-    "date": "May 20, 2025",
+    "date": "Coming Soon",
     "time": "2:00 PM - 6:00 PM",
     "location": "SwahiliPot Hub, Mombasa",
-    "description": "Showcasing innovative projects by young entrepreneurs. This event highlights the creativity and ingenuity of youth in our community, providing them with a platform to showcase their ideas and receive feedback.",
-    "image": "https://images.unsplash.com/photo-1559223607-a43c990c692c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    "description": "Working towards showcasing solutions to save the world from climate changes. This event highlights the creativity and ingenuity of youth in our community, providing them with a platform to showcase their ideas and receive feedback.",
+    "image": "/images/youthinnovation.png",
     "category": "Innovation",
     "featured": true,
     "registration": {
       "required": true,
-      "deadline": "May 15, 2025",
+      "deadline": "chill",
       "fee": "Free",
-      "link": "/programs/events/youth-innovation-showcase"
+      "link": "/programs/events"
     },
     "details": [
       "Project exhibitions",
@@ -70,77 +70,7 @@
       "Networking with potential investors",
       "Awards for outstanding projects"
     ]
-  },
-  {
-    "id": "digital-skills-bootcamp",
-    "title": "Digital Skills Bootcamp",
-    "date": "June 10-14, 2025",
-    "time": "9:00 AM - 3:00 PM",
-    "location": "SwahiliPot Hub, Mombasa",
-    "description": "An intensive five-day bootcamp focused on essential digital skills for the modern workplace. Participants will learn practical skills that enhance their employability and entrepreneurial capabilities.",
-    "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "category": "Education",
-    "featured": false,
-    "registration": {
-      "required": true,
-      "deadline": "June 5, 2025",
-      "fee": "KES 1,000",
-      "link": "/programs/events/digital-skills-bootcamp"
-    },
-    "details": [
-      "Web development fundamentals",
-      "Digital marketing essentials",
-      "Data analysis basics",
-      "Professional online presence",
-      "Certificate upon completion"
-    ]
-  },
-  {
-    "id": "cultural-arts-festival",
-    "title": "Cultural Arts Festival",
-    "date": "July 15-17, 2025",
-    "time": "10:00 AM - 8:00 PM",
-    "location": "SwahiliPot Hub, Mombasa",
-    "description": "A celebration of local arts and culture featuring exhibitions, performances, and workshops. This festival showcases the rich cultural heritage of our community and provides a platform for artists to share their work.",
-    "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "category": "Arts & Culture",
-    "featured": false,
-    "registration": {
-      "required": false,
-      "deadline": "",
-      "fee": "Free",
-      "link": "/programs/events/cultural-arts-festival"
-    },
-    "details": [
-      "Art exhibitions",
-      "Music and dance performances",
-      "Cultural workshops",
-      "Local cuisine",
-      "Artisan marketplace"
-    ]
-  },
-  {
-    "id": "entrepreneurship-workshop",
-    "title": "Entrepreneurship Workshop",
-    "date": "August 5, 2025",
-    "time": "9:00 AM - 4:00 PM",
-    "location": "SwahiliPot Hub, Mombasa",
-    "description": "A comprehensive workshop on starting and growing a successful business. Participants will learn practical skills and strategies for entrepreneurship from experienced business leaders.",
-    "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "category": "Entrepreneurship",
-    "featured": false,
-    "registration": {
-      "required": true,
-      "deadline": "August 1, 2025",
-      "fee": "KES 500",
-      "link": "/programs/events/entrepreneurship-workshop"
-    },
-    "details": [
-      "Business model development",
-      "Market research techniques",
-      "Funding strategies",
-      "Marketing and sales",
-      "Legal and regulatory considerations"
-    ]
   }
+  
+
 ]
