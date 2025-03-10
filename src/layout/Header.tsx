@@ -20,6 +20,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false); // To detect mobile
   const router = useRouter();
 
   useEffect(() => {
@@ -27,8 +28,19 @@ export default function Header() {
       setIsScrolled(window.scrollY > 10);
     };
 
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // Mobile detection
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', checkScreenSize);
+    
+    checkScreenSize(); // Check initial screen size
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', checkScreenSize);
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -41,11 +53,15 @@ export default function Header() {
   };
 
   const handleMouseEnter = (menu: string) => {
-    setActiveDropdown(menu);
+    if (!isMobile) {
+      setActiveDropdown(menu);
+    }
   };
 
   const handleMouseLeave = () => {
-    setActiveDropdown(null);
+    if (!isMobile) {
+      setActiveDropdown(null);
+    }
   };
 
   return (
@@ -62,7 +78,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {/* About Dropdown The dropdown will automatically select about us as the active page */}
+            {/* About Dropdown */}
             <div
               onMouseEnter={() => handleMouseEnter('about')}
               onMouseLeave={handleMouseLeave}
@@ -95,6 +111,7 @@ export default function Header() {
               />
             </div>
 
+            {/* Other Links */}
             <Link
               href="/adverts"
               className="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors"

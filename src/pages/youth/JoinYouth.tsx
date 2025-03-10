@@ -110,22 +110,23 @@ export default function JoinYouthDatabase() {
     "Social Impact"
   ];
 
-  return (
-    <>
+    return (
+      <>
       <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
-        <div className="container-custom mx-auto">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Youth Database
+        <div className="container-custom mx-auto text-center">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-[calc(4rem*0.5)] md:text-[calc(6rem*0.5)] font-bold mb-6">
+             Youth Database
             </h1>
-            <p className="text-xl mb-8">
-              Join our youth database to connect with opportunities, resources, and a community of like-minded individuals.
+            <p className="text-[calc(1.25rem*0.8)] mb-8">
+              Join our youth Database to connect with opportunities, resources, and a community of like-minded individuals.
             </p>
           </div>
         </div>
       </section>
+    
       
-      <section className="py-16 bg-light dark:bg-gray-800">
+      <section className="py-16 bg-blue-50 dark:bg-gray-800">
         <div className="container-custom mx-auto">
           <div className="max-w-3xl mx-auto mb-12">
             <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
@@ -195,7 +196,7 @@ export default function JoinYouthDatabase() {
           </div>
           
           <div className="max-w-3xl mx-auto">
-            <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+            <div className="bg-orange-50 dark:bg-gray-700 p-8 rounded-lg shadow-md">
               <h2 className="text-2xl font-bold mb-6 text-center">Registration Form</h2>
               
               {isSubmitted ? (

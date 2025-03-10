@@ -4,18 +4,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // Define props interface for the AboutMenu component.
 interface AboutMenuProps {
-  // Optional controlled state to indicate if the menu is open.
   isOpen?: boolean;
-  // Optional callback to notify parent when a link is clicked (or menu should close).
   onLinkClick?: () => void;
 }
 
 export default function AboutMenu({ isOpen, onLinkClick }: AboutMenuProps) {
-  // Determine if the component is controlled externally.
   const isControlled = typeof isOpen !== 'undefined';
-
-  // If not controlled, manage the open state internally.
   const [internalOpen, setInternalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Use the controlled prop if available; otherwise, use the internal state.
   const open = isControlled ? isOpen : internalOpen;
@@ -30,9 +26,6 @@ export default function AboutMenu({ isOpen, onLinkClick }: AboutMenuProps) {
     { title: "About Us", path: "/about", description: "Learn about our mission, vision, and impact" },
     { title: "Our Origin", path: "/about/origin", description: "Discover how SwahiliPot Hub began" },
     { title: "Board Members", path: "/about/board-members", description: "Meet our board of directors" },
-    // { title: "Management Team", path: "/about/management-team", description: "Our leadership team" },
-    // { title: "Media", path: "/about/media", description: "Press releases and media resources" },
-    // { title: "Sponsors", path: "/about/sponsors", description: "Our partners and supporters" },
     { title: "Work With Us", path: "/about/work-with-us", description: "Career opportunities and collaboration" }
   ];
 
@@ -41,7 +34,6 @@ export default function AboutMenu({ isOpen, onLinkClick }: AboutMenuProps) {
     if (!isControlled) {
       setInternalOpen(false);
     } else if (onLinkClick) {
-      // For a controlled component, call the parent's onLinkClick callback.
       onLinkClick();
     }
   };
@@ -52,6 +44,19 @@ export default function AboutMenu({ isOpen, onLinkClick }: AboutMenuProps) {
       setInternalOpen((prev) => !prev);
     }
   };
+
+  // Detect screen size for mobile vs desktop
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // Mobile detection
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    // Cleanup listener
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   useEffect(() => {
     // Handler to close the menu when clicking outside.
@@ -79,20 +84,33 @@ export default function AboutMenu({ isOpen, onLinkClick }: AboutMenuProps) {
       document.removeEventListener("keydown", handleKeyDown);
     }
 
-    // Cleanup event listeners when the component unmounts or when 'open' changes.
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [open]);
 
+  // Add event handlers for hover and click on mobile and desktop
+  const handleMouseEnter = () => {
+    if (!isMobile) setInternalOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) setInternalOpen(false);
+  };
+
   return (
-    <div className="relative" ref={menuRef}>
+    <div
+      className="relative"
+      ref={menuRef}
+      onMouseEnter={handleMouseEnter} // Open on hover (except on mobile)
+      onMouseLeave={handleMouseLeave} // Close on mouse leave (except on mobile)
+      onClick={() => isMobile && toggleMenu()} // Toggle on click for mobile
+    >
       {/* Button to toggle the About dropdown */}
       <button
         ref={buttonRef}
         className="flex items-center space-x-1 hover:text-primary dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
-        onClick={toggleMenu}
         aria-expanded={open}
         aria-haspopup="true"
         aria-label="About menu"
@@ -130,9 +148,7 @@ export default function AboutMenu({ isOpen, onLinkClick }: AboutMenuProps) {
                   href={item.path}
                   className="group flex flex-col px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700"
                   role="menuitem"
-                  // Set the first menu item reference for initial focus.
                   ref={index === 0 ? firstItemRef : null}
-                  // On link click, close the menu.
                   onClick={closeMenu}
                 >
                   <span className="font-medium text-gray-900 dark:text-white group-hover:text-primary">
