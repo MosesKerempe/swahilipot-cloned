@@ -18,7 +18,7 @@ export default function TeamCard({ name, title, image, bio, social }: TeamCardPr
     <div className="bg-white dark:bg-gray-800 rounded-2xl border-2 border-blue-100 shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
       {/* Image Container */}
       <div className="flex justify-center pt-6">
-        <div className="w-45 h-60 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-blue-300 ">
+        <div className="w-60 h-60 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-blue-300 ">
           <img 
             src={image} 
             alt={name} 
