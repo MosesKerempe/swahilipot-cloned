@@ -3,18 +3,21 @@ import React from 'react';
 export default function CaseManagementPage() {
   return (
     <>
-      <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
-        <div className="container-custom mx-auto">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Case Management Program
-            </h1>
-            <p className="text-xl mb-8">
-              Providing personalized support to youth facing various challenges and connecting them with resources and opportunities.
-            </p>
-          </div>
+    <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
+      <div className="container-custom mx-auto text-center">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-[calc(4rem*0.5)] md:text-[calc(6rem*0.5)] font-bold mb-6">
+            Case Management Program
+          </h1>
+          <p className="text-[calc(1.25rem*0.8)] mb-8">
+            Providing personalized support to youth facing various challenges and connecting them with resources and opportunities.
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
+  
+
+
       
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container-custom mx-auto">

@@ -1,26 +1,27 @@
 import Head from 'next/head';
 
+
 export default function Adverts() {
   // This would typically come from your data file or CMS
   const adverts = [
     {
       title: "Tech Bootcamp Instructor",
       organization: "SwahiliPot Hub",
-      deadline: "April 15, 2025",
+      deadline: "Pending",
       description: "We're looking for experienced instructors to lead our upcoming coding bootcamps. If you have expertise in web development, mobile app development, or data science, we want to hear from you!",
       link: "#"
     },
     {
       title: "Call for Artists - Cultural Exhibition",
       organization: "SwahiliPot Hub Arts Department",
-      deadline: "May 1, 2025",
+      deadline: "Pending",
       description: "Calling all local artists! Submit your work for our upcoming cultural exhibition celebrating East African heritage. All mediums welcome.",
       link: "#"
     },
     {
       title: "Volunteer Mentors Needed",
       organization: "Swahili Tech Women",
-      deadline: "Ongoing",
+      deadline: "Pending",
       description: "Share your expertise and inspire the next generation of women in technology. We're seeking volunteer mentors for our Swahili Tech Women program.",
       link: "#"
     }
@@ -28,29 +29,29 @@ export default function Adverts() {
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>Adverts - SwahiliPot Hub</title>
         <meta name="description" content="Opportunities, announcements, and calls for participation from SwahiliPot Hub." />
-      </Head>
+      </Head> */}
       
       <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
-        <div className="container-custom mx-auto">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+        <div className="container-custom mx-auto text-center">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-[calc(4rem*0.5)] md:text-[calc(6rem*0.5)] font-bold mb-6">
               Adverts & Opportunities
             </h1>
-            <p className="text-xl mb-8">
-              Discover opportunities to work with us, participate in our programs, or contribute to our community.
+            <p className="text-[calc(1.25rem*0.8)] mb-8">
+            Discover opportunities to work with us, participate in our programs, or contribute to our community.
             </p>
           </div>
         </div>
       </section>
       
-      <section className="py-16 bg-light dark:bg-gray-800">
+      <section className="py-16 bg-blue-50 dark:bg-gray-800">
         <div className="container-custom mx-auto">
           <div className="grid grid-cols-1 gap-8">
             {adverts.map((advert, index) => (
-              <div key={index} className="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+              <div key={index} className="bg-orange-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-4">
                     <div>
@@ -77,7 +78,7 @@ export default function Adverts() {
             ))}
           </div>
           
-          <div className="mt-12 bg-white dark:bg-gray-700 rounded-lg shadow-md p-8">
+          <div className="mt-12 bg-yellow-50 dark:bg-gray-700 rounded-lg shadow-md p-8">
             <h2 className="text-2xl font-bold mb-6">Submit an Advert</h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               If you'd like to post an opportunity or announcement on our platform, please fill out the form below. All submissions will be reviewed before publishing.
