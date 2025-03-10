@@ -25,13 +25,13 @@ export default function CampusAmbassadorPage() {
                 The Campus Ambassador Program creates a network of student representatives who promote SwahiliPot Hub's mission and activities on university campuses. Ambassadors organize events, share resources, and build communities of innovation and creativity at their institutions, while developing leadership and professional skills.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                Our ambassadors serve as the bridge between SwahiliPot Hub and university students, helping to extend our reach and impact to more young people across East Africa.
+                The Swahilipot Hub Campus Ambassador Program fosters in demand-skills enhancement, effective communication and teamworkwhile encouraging selfdiscovery, networking and open mindedness among ambassadors.
               </p>
             </div>
             
             <div className="rounded-lg overflow-hidden shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src="/images/campus.jpg" 
                 alt="Campus Ambassador Program" 
                 className="w-full h-auto object-cover"
               />
@@ -48,9 +48,9 @@ export default function CampusAmbassadorPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Promote SwahiliPot Hub</h3>
+                  <h3 className="text-xl font-semibold mb-2">Oversees the implemantion of  the campus ambassador program.</h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Raise awareness about SwahiliPot Hub's mission, programs, and opportunities among university students through social media, presentations, and word-of-mouth.
+                    He is the one oversees and implements ambassadors programs within the SPH club. 
                   </p>
                 </div>
               </div>
@@ -62,9 +62,9 @@ export default function CampusAmbassadorPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Build Campus Communities</h3>
+                  <h3 className="text-xl font-semibold mb-2">Offer support to members in navigating their career journey.</h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Create and nurture communities of students interested in technology, innovation, arts, and entrepreneurship on campus.
+                    Offers support to members navigating their career journey and addressing challanges collaborative with the program team.
                   </p>
                 </div>
               </div>
@@ -76,9 +76,9 @@ export default function CampusAmbassadorPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Organize Events</h3>
+                  <h3 className="text-xl font-semibold mb-2">Establish and mantain relationships.</h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Plan and execute campus events such as workshops, tech talks, hackathons, and creative showcases in collaboration with SwahiliPot Hub.
+                    Establishes and mantains relationships with university faculty , administration and students organizations through SPH club.
                   </p>
                 </div>
               </div>
@@ -90,9 +90,9 @@ export default function CampusAmbassadorPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Represent SwahiliPot Hub</h3>
+                  <h3 className="text-xl font-semibold mb-2">Plans and organizes events and workshops.</h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Act as a representative of SwahiliPot Hub on campus, embodying our values of innovation, creativity, collaboration, and community impact.
+                    Plans and organizzes events,workshops and activities related to leveraging technology throgh the SPH club.
                   </p>
                 </div>
               </div>
@@ -104,9 +104,9 @@ export default function CampusAmbassadorPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Provide Feedback</h3>
+                  <h3 className="text-xl font-semibold mb-2">Serves as a representive and advocate for the campus ambassador program.</h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Share insights about student needs, interests, and challenges to help SwahiliPot Hub improve and tailor its programs for university students.
+                    Serve as representive and advocate for the campus program with within the SPH club and the broader University community.
                   </p>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default function CampusAmbassadorPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
             <div className="order-2 md:order-1 rounded-lg overflow-hidden shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src="/images/ambassador.jpg" 
                 alt="Benefits for Campus Ambassadors" 
                 className="w-full h-auto object-cover"
               />
@@ -127,33 +127,29 @@ export default function CampusAmbassadorPage() {
               <div className="space-y-4">
                 <div className="flex items-start">
                   <span className="text-primary mr-2">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">Leadership and professional development opportunities</span>
+                  <span className="text-gray-700 dark:text-gray-300">Gain exclusive acces to Swahilipot Hub`s latest events and programs before anyone else on camps shares them through SPH clubs.</span>
                 </div>
                 <div className="flex items-start">
                   <span className="text-primary mr-2">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">Networking with industry professionals and like-minded peers</span>
+                  <span className="text-gray-700 dark:text-gray-300">Develop valuable technical and soft skills, preparing you for succes in various professional endeavors.</span>
                 </div>
                 <div className="flex items-start">
                   <span className="text-primary mr-2">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">Priority access to SwahiliPot Hub programs and events</span>
+                  <span className="text-gray-700 dark:text-gray-300">Expand your network and forge relaionships with fellow student leaders and enerprenuers from diverse campuses.</span>
                 </div>
                 <div className="flex items-start">
                   <span className="text-primary mr-2">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">Mentorship from SwahiliPot Hub team members</span>
+                  <span className="text-gray-700 dark:text-gray-300">Recieve special invitations to exclusive events,conferences and training opportunities.</span>
                 </div>
                 <div className="flex items-start">
                   <span className="text-primary mr-2">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">Recognition and certification for your contributions</span>
+                  <span className="text-gray-700 dark:text-gray-300">Enhance your resume with the prestigious Campus Ambassador Program experience, adding significant value.</span>
                 </div>
                 <div className="flex items-start">
                   <span className="text-primary mr-2">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">Exclusive ambassador swag and resources</span>
+                  <span className="text-gray-700 dark:text-gray-300">Earn Certificates showcasing your participation in the program and various attended events, boosting your credentials.</span>
                 </div>
-                <div className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">Potential internship and job opportunities through our network</span>
-                </div>
-              </div>
+               </div>
             </div>
           </div>
           
@@ -190,23 +186,23 @@ export default function CampusAmbassadorPage() {
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start">
                   <span className="text-primary mr-2">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">Currently enrolled in a university or college</span>
+                  <span className="text-gray-700 dark:text-gray-300">Currentl enrolled in a Universiy or College program within the target school.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-primary mr-2">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">Strong communication and interpersonal skills</span>
+                  <span className="text-gray-700 dark:text-gray-300">Second-year student or above i any department.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-primary mr-2">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">Passion for technology, innovation, arts, or entrepreneurship</span>
+                  <span className="text-gray-700 dark:text-gray-300">Genuine enthusiasm for the University or organization, eager to share experience and promote campus life.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-primary mr-2">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">Leadership experience or potential</span>
+                  <span className="text-gray-700 dark:text-gray-300">Demonstrated initiative, responsibility, and capacity to inspire and guide others.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-primary mr-2">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">Commitment to dedicate at least 5 hours per week to ambassador activities</span>
+                  <span className="text-gray-700 dark:text-gray-300">Either currently pursuing an IT-related cuourse or demonstrating a strong passion for technology.</span>
                 </li>
               </ul>
               
