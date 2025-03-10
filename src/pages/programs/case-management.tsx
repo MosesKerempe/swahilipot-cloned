@@ -10,7 +10,7 @@ export default function CaseManagementPage() {
             Case Management Program
           </h1>
           <p className="text-[calc(1.25rem*0.8)] mb-8">
-            Providing personalized support to youth facing various challenges and connecting them with resources and opportunities.
+           Anyone, Anywhere
           </p>
         </div>
       </div>
@@ -25,16 +25,16 @@ export default function CaseManagementPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">About Our Case Management Program</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                Our Case Management Program offers individualized support to youth facing various challenges, helping them navigate obstacles and access opportunities. Through personalized assessment, resource connection, skills development, and ongoing support, we help young people overcome barriers and achieve their goals.
+              At the Swahili Pot Hub Foundation (SPH), we are committed to making a positive impact on the lives of young individuals in Mombasa County and its six sub-counties. For the past seven years, we have been dedicated to helping youth overcome challenges and thrive. Through strategic partnerships with communities, government entities, CSOs, and local leaders, SPH has been a beacon of hope for young people from diverse backgrounds
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                We believe that every young person deserves the chance to reach their full potential, regardless of the challenges they face. Our case managers work one-on-one with youth to understand their unique situations, identify their strengths and needs, and develop personalized plans to support their success.
+              The primary objective of the Case Management Project is to connect 60,000 youth in Mombasa County and its sub-counties to a wide range of opportunities and sustainable employment. We understand that each young person is unique, and to empower them effectively, we emphasize a personalized case management approach. This approach allows us to offer customized support and guidance, helping young individuals access and thrive in various educational, vocational, and entrepreneurial pathways.
               </p>
             </div>
             
             <div className="rounded-lg overflow-hidden shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src="/images/case-management.jpg" 
                 alt="Case Management Program" 
                 className="w-full h-auto object-cover"
               />
