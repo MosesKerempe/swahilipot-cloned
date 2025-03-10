@@ -22,13 +22,13 @@ export default function RoleDescription({
   applicationLink
 }: RoleDescriptionProps) {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-md mb-8">
+    <div className="bg-blue-50 p-8 rounded-lg shadow-md mb-8">
       <div className="mb-6">
         <h2 className="text-2xl font-bold mb-2">{title}</h2>
         <div className="flex flex-wrap gap-4 text-sm">
-          <span className="bg-light px-3 py-1 rounded-full">{department}</span>
-          <span className="bg-light px-3 py-1 rounded-full">{location}</span>
-          <span className="bg-light px-3 py-1 rounded-full">{type}</span>
+          <span className="bg-orange-50 px-3 py-1 rounded-full">{department}</span>
+          <span className="bg-orange-50 px-3 py-1 rounded-full">{location}</span>
+          <span className="bg-orange-50 px-3 py-1 rounded-full">{type}</span>
         </div>
       </div>
       
