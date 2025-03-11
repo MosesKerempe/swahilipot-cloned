@@ -34,7 +34,7 @@ export default function PageAbout({ description, image, activities }: PageAboutP
           <div className="rounded-lg overflow-hidden shadow-md">
             <img 
               src={image} 
-              alt="Engineering at SwahiliPot Hub" 
+              alt="Creatives at SwahiliPot Hub" 
               className="w-full h-auto object-cover"
             />
           </div>

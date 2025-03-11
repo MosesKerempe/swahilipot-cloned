@@ -1,14 +1,13 @@
+/* Import external styles first */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+/* Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
 /* In your global CSS file (e.g., global.css) */
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
-
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
@@ -118,6 +117,7 @@ body {
 .mobile-menu {
   animation: slideDown 0.3s ease-out;
 }
+<<<<<<< HEAD
 .navbar {
   background-color: #fff;
   padding: 10px 20px;
@@ -148,3 +148,5 @@ body {
       text-align: center;
   }
 }
+=======
+>>>>>>> upstream/main
