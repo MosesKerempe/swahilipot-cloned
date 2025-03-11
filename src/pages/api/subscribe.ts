@@ -5,8 +5,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 const transporter = nodemailer.createTransport({
   service: 'gmail', // You can use other email services if you like
   auth: {
-    user: process.env.EMAIL_USER, // Use environment variable for security
-    pass: process.env.EMAIL_PASS, // Use environment variable for security
+    user: process.env.NEXT_PUBLIC_EMAIL_USER, // Use environment variable for security
+    pass: process.env.NEXT_PUBLIC_EMAIL_PASS, // Use environment variable for security
   },
 });
 

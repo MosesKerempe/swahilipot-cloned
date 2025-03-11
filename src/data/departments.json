@@ -1,0 +1,152 @@
+[
+    {
+      "id": "engineering",
+      "name": "Engineering",
+      "description": "Our Engineering department focuses on developing technical solutions and infrastructure to support SwahiliPot Hub's initiatives and the wider community.",
+      "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "activities": [
+        "Software Development",
+        "Hardware Prototyping",
+        "Technical Infrastructure",
+        "IoT Projects",
+        "Engineering Workshops"
+      ],
+      "team": [
+        {
+          "name": "David Mwangi",
+          "title": "Engineering Lead",
+          "image": "https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "name": "Jane Kamau",
+          "title": "Software Developer",
+          "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "name": "Michael Odhiambo",
+          "title": "Hardware Engineer",
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    },
+    {
+      "id": "technology",
+      "name": "Technology",
+      "description": "The Technology department drives digital innovation and skills development through various programs, workshops, and initiatives.",
+      "image": "https://images.unsplash.com/photo-1581092921461-7d65ca45393a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "activities": [
+        "Coding Bootcamps",
+        "Tech Workshops",
+        "Digital Skills Training",
+        "Hackathons",
+        "Tech Mentorship"
+      ],
+      "team": [
+        {
+          "name": "Sarah Ochieng",
+          "title": "Technology Director",
+          "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "name": "John Maina",
+          "title": "Tech Programs Coordinator",
+          "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "name": "Grace Wanjiku",
+          "title": "Digital Skills Trainer",
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    },
+    {
+      "id": "communications",
+      "name": "Communications",
+      "description": "Our Communications department manages SwahiliPot Hub's messaging, media relations, and digital presence to share our story and impact.",
+      "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "activities": [
+        "Media Relations",
+        "Social Media Management",
+        "Content Creation",
+        "Community Outreach",
+        "SwahiliPot FM"
+      ],
+      "team": [
+        {
+          "name": "Grace Wanjiku",
+          "title": "Communications Manager",
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "name": "Peter Njoroge",
+          "title": "Media Coordinator",
+          "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "name": "Amina Hassan",
+          "title": "Content Creator",
+          "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    },
+    {
+      "id": "community",
+      "name": "Community",
+      "description": "The Community department builds and nurtures relationships with our members, partners, and the wider community to create a supportive ecosystem.",
+      "image": "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "activities": [
+        "Community Events",
+        "Membership Programs",
+        "Partner Relations",
+        "Volunteer Coordination",
+        "Community Support"
+      ],
+      "team": [
+        {
+          "name": "Michael Kamau",
+          "title": "Community Engagement Manager",
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "name": "Faith Mwangi",
+          "title": "Membership Coordinator",
+          "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "name": "James Omondi",
+          "title": "Volunteer Coordinator",
+          "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    },
+    {
+      "id": "creatives",
+      "name": "Creatives",
+      "description": "Our Creatives department celebrates and promotes arts and culture through various programs, exhibitions, and performances.",
+      "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "activities": [
+        "Art Exhibitions",
+        "Music Programs",
+        "Dance Workshops",
+        "Cultural Events",
+        "Creative Skills Development"
+      ],
+      "team": [
+        {
+          "name": "Sarah Ochieng",
+          "title": "Arts & Culture Manager",
+          "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "name": "Daniel Mutua",
+          "title": "Visual Arts Coordinator",
+          "image": "https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "name": "Fatima Ali",
+          "title": "Performing Arts Coordinator",
+          "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    }
+  ]

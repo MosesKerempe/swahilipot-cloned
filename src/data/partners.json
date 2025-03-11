@@ -1,0 +1,58 @@
+[
+    {
+      "name": "Google",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png",
+      "website": "https://www.google.com",
+      "category": "Technology",
+      "description": "Google has supported SwahiliPot Hub through various initiatives, including developer training programs and technology resources."
+    },
+    {
+      "name": "Microsoft",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1200px-Microsoft_logo.svg.png",
+      "website": "https://www.microsoft.com",
+      "category": "Technology",
+      "description": "Microsoft partners with SwahiliPot Hub to provide software, training, and resources for youth in technology."
+    },
+    {
+      "name": "IBM",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/1200px-IBM_logo.svg.png",
+      "website": "https://www.ibm.com",
+      "category": "Technology",
+      "description": "IBM collaborates with SwahiliPot Hub on skills development programs and technology initiatives."
+    },
+    {
+      "name": "Meta",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png",
+      "website": "https://www.meta.com",
+      "category": "Technology",
+      "description": "Meta supports SwahiliPot Hub's digital skills programs and community building initiatives."
+    },
+    {
+      "name": "UNESCO",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/UNESCO_logo.svg/1200px-UNESCO_logo.svg.png",
+      "website": "https://www.unesco.org",
+      "category": "International Organization",
+      "description": "UNESCO partners with SwahiliPot Hub on cultural preservation and educational initiatives."
+    },
+    {
+      "name": "UNDP",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/UNDP_logo.svg/1200px-UNDP_logo.svg.png",
+      "website": "https://www.undp.org",
+      "category": "International Organization",
+      "description": "UNDP collaborates with SwahiliPot Hub on sustainable development and youth empowerment programs."
+    },
+    {
+      "name": "Kenya ICT Authority",
+      "logo": "https://www.icta.go.ke/wp-content/uploads/2019/08/cropped-icta_logo.png",
+      "website": "https://www.icta.go.ke",
+      "category": "Government",
+      "description": "The Kenya ICT Authority works with SwahiliPot Hub to promote digital innovation and skills development."
+    },
+    {
+      "name": "Safaricom",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/89/Safaricom_logo.svg/1200px-Safaricom_logo.svg.png",
+      "website": "https://www.safaricom.co.ke",
+      "category": "Telecommunications",
+      "description": "Safaricom supports SwahiliPot Hub's technology initiatives and community programs."
+    }
+  ]

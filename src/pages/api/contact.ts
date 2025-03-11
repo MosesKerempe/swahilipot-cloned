@@ -9,15 +9,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const transporter = nodemailer.createTransport({
       service: 'gmail', // or any email service you're using
       auth: {
-        user: process.env.EMAIL_USER, // Your email address
-        pass: process.env.EMAIL_PASS, // Your email password
+        user: process.env.NEXT_PUBLIC_EMAIL_USER, // Your email address
+        pass: process.env.NEXT_PUBLIC_EMAIL_PASS, // Your email password
       },
     });
 
     // Set up email data
     const mailOptions = {                                                                                      
       from: email,
-      to: process.env.RECIPIENT_EMAIL, // The recipient email address - receiving emails.
+      to: process.env.NEXT_PUBLIC_RECIPIENT_EMAIL, // The recipient email address - receiving emails.
       subject: `New message from: ${name} - ${subject}`,
       text: `
         You have received a new message from the contact form:
