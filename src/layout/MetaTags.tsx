@@ -7,7 +7,7 @@ interface MetaTagsProps {
 }
 
 export default function MetaTags({
-  title = 'SwahiliPot Hub - Empowering Innovation in East Africa',
+  title = 'SwahiliPot Hub - Empowering Innovation in Coastal region',
   description = 'SwahiliPot Hub is a collaborative space for technology, arts, and culture in Mombasa, Kenya.',
   image = '/images/og-image.jpg',
 }: MetaTagsProps) {
@@ -20,14 +20,14 @@ export default function MetaTags({
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://swahilipothub.co.ke/" />
+      <meta property="og:url" content="https://swahilipothub.vercel.app/" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://swahilipothub.co.ke/" />
+      <meta property="twitter:url" content="https://swahilipothub.vercel.app/" />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={image} />
