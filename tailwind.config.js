@@ -5,22 +5,22 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/layout/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: ['class', '[data-theme="dark"]'],
+  darkMode: ['class', '[data-theme="dark"]'], // Enable dark mode with the class or data attribute
   theme: {
     extend: {
       colors: {
-        primary: "var(--primary-color)",
-        secondary: "var(--secondary-color)",
-        dark: "var(--dark-color)",
-        light: "var(--light-color)",
+        primary: "var(--primary-color)", // Use CSS variables for dynamic color
+        secondary: "var(--secondary-color)", // Same here for secondary
+        dark: "var(--dark-color)", // For dark theme
+        light: "var(--light-color)", // For light theme
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'], // Define your default font family
       },
       animation: {
-        'fade-in': 'fadeIn 1s ease-in-out',
-        'slide-up': 'slideUp 0.5s ease-out',
-        'pulse-slow': 'pulse 3s infinite',
+        'fade-in': 'fadeIn 1s ease-in-out', // Custom fade-in animation
+        'slide-up': 'slideUp 0.5s ease-out', // Custom slide-up animation
+        'pulse-slow': 'pulse 3s infinite', // Slower pulse animation
       },
       keyframes: {
         fadeIn: {
@@ -33,7 +33,7 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'hero-pattern': "url('/images/hero-bg.jpg')",
+        'hero-pattern': "url('/images/hero-bg.jpg')", // Define background image for hero section
       },
     },
   },

@@ -1,93 +1,119 @@
 import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 
-// Define the props type
 interface ProgramMenuProps {
-  isOpen: boolean;
-  onLinkClick: () => void;
+  isOpen?: boolean;
+  onLinkClick?: () => void;
+  isMobile?: boolean;
 }
 
-const ProgramMenu: React.FC<ProgramMenuProps> = ({ isOpen, onLinkClick }) => {
+export default function ProgramMenu({ isOpen, onLinkClick, isMobile }: ProgramMenuProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  // Close menu when clicking outside
+  const menuItems = [
+    { title: "Swahili Tech Women", path: "/programs/swahili-tech-women", description: "Empowering women in technology" },
+    { title: "Case Management", path: "/programs/case-management", description: "Project and case tracking system" },
+    { title: "Events", path: "/programs/events", description: "Upcoming events and activities" },
+    { title: "Campus Ambassador", path: "/programs/campus_ambassador", description: "University outreach program" },
+    { title: "Tourism Innovation Lab", path: "/programs/mombasa-tourism-innovation-lab", description: "Innovation in tourism sector" }
+  ];
+
+  const menuState = isOpen ?? isMenuOpen;
+
+  const toggleMenu = () => {
+    if (typeof isOpen === 'undefined') {
+      setIsMenuOpen(!isMenuOpen);
+    }
+  };
+
+  const handleLinkClick = () => {
+    if (onLinkClick) {
+      onLinkClick();
+    }
+    setIsMenuOpen(false);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        onLinkClick(); // Close the menu if clicked outside
+        setIsMenuOpen(false);
+        if (onLinkClick) onLinkClick();
       }
     };
 
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        onLinkClick(); // Close the menu when 'Escape' key is pressed
-        buttonRef.current?.focus(); // Refocus button after closing
-      }
-    };
+    if (menuState) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [onLinkClick]);
+  }, [menuState, onLinkClick]);
+
+  const handleMouseEnter = () => {
+    if (!isMobile) {
+      setIsMenuOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
-    <div className="relative" ref={menuRef}>
-      {/* Toggle Button */}
+    <div
+      ref={menuRef}
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <button
         ref={buttonRef}
-        className="flex items-center space-x-1 hover:text-primary dark:hover:text-blue-400 transition-all duration-300 focus:outline-none"
-        aria-expanded={isOpen}
-        aria-controls="program-menu"
+        onClick={() => isMobile && toggleMenu()}
+        className="flex items-center gap-1 px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary rounded-md transition-colors"
+        aria-expanded={menuState}
+        aria-haspopup="true"
       >
         <span>Programs</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+        <motion.div
+          animate={{ rotate: menuState ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
+          <ChevronDown className="h-4 w-4" />
+        </motion.div>
       </button>
 
-      {/* Animated Dropdown Menu */}
       <AnimatePresence>
-        {isOpen && (
+        {menuState && (
           <motion.div
-            id="program-menu"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 text-black dark:text-white shadow-lg rounded-lg border border-gray-200 dark:border-gray-700 z-10"
-            role="menu"
-            aria-orientation="vertical"
-            onMouseEnter={() => {}}
-            onMouseLeave={() => {}}
+            transition={{ duration: 0.2 }}
+            className={`absolute left-0 mt-2 w-80 rounded-lg bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 ${
+              isMobile ? 'position-static w-full' : ''
+            }`}
           >
-            <div className="py-1">
-              {[
-                { href: '/programs/swahili-tech-women', label: 'Swahili Tech Women' },
-                { href: '/programs/case-management', label: 'Case Management' },
-                { href: '/programs/events', label: 'Events' },
-                { href: '/programs/campus_ambassador', label: 'Campus Ambassador' },
-                { href: '/programs/mombasa-tourism-innovation-lab', label: 'Mombasa Tourism Innovation Lab' }
-              ].map(({ href, label }) => (
+            <div className="py-2">
+              {menuItems.map((item, index) => (
                 <Link
-                  key={href}
-                  href={href}
-                  className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 
-                             rounded transition-all duration-300"
-                  role="menuitem"
-                  onClick={(e) => e.stopPropagation()} // Prevent close on clicking the menu item
+                  key={index}
+                  href={item.path}
+                  onClick={handleLinkClick}
+                  className="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                 >
-                  {label}
+                  <span className="block font-medium text-gray-900 dark:text-white">
+                    {item.title}
+                  </span>
+                  <span className="block mt-1 text-sm text-gray-500 dark:text-gray-400">
+                    {item.description}
+                  </span>
                 </Link>
               ))}
             </div>
@@ -96,6 +122,4 @@ const ProgramMenu: React.FC<ProgramMenuProps> = ({ isOpen, onLinkClick }) => {
       </AnimatePresence>
     </div>
   );
-};
-
-export default ProgramMenu;
+}

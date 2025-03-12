@@ -1,27 +1,20 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 
-// Define props interface for the AboutMenu component.
 interface AboutMenuProps {
   isOpen?: boolean;
   onLinkClick?: () => void;
+  isMobile?: boolean;
 }
 
-export default function AboutMenu({ isOpen, onLinkClick }: AboutMenuProps) {
-  const isControlled = typeof isOpen !== 'undefined';
-  const [internalOpen, setInternalOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Use the controlled prop if available; otherwise, use the internal state.
-  const open = isControlled ? isOpen : internalOpen;
-
-  // Refs for the menu container, toggle button, and first menu item for accessibility.
+export default function AboutMenu({ isOpen, onLinkClick, isMobile }: AboutMenuProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const firstItemRef = useRef<HTMLAnchorElement>(null);
 
-  // Define the menu items for the dropdown.
+  // Menu items
   const menuItems = [
     { title: "About Us", path: "/about", description: "Learn about our mission, vision, and impact" },
     { title: "Our Origin", path: "/about/origin", description: "Discover how SwahiliPot Hub began" },
@@ -29,132 +22,99 @@ export default function AboutMenu({ isOpen, onLinkClick }: AboutMenuProps) {
     { title: "Work With Us", path: "/about/work-with-us", description: "Career opportunities and collaboration" }
   ];
 
-  // Helper function to close the menu.
-  const closeMenu = () => {
-    if (!isControlled) {
-      setInternalOpen(false);
-    } else if (onLinkClick) {
+  // Handle controlled vs uncontrolled state
+  const menuState = isOpen ?? isMenuOpen;
+
+  const toggleMenu = () => {
+    if (typeof isOpen === 'undefined') {
+      setIsMenuOpen(!isMenuOpen);
+    }
+  };
+
+  const handleLinkClick = () => {
+    if (onLinkClick) {
       onLinkClick();
     }
+    setIsMenuOpen(false);
   };
 
-  // Toggle function for the menu. It only updates internal state if not controlled.
-  const toggleMenu = () => {
-    if (!isControlled) {
-      setInternalOpen((prev) => !prev);
-    }
-  };
-
-  // Detect screen size for mobile vs desktop
+  // Click outside handler
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768); // Mobile detection
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    // Cleanup listener
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
-
-  useEffect(() => {
-    // Handler to close the menu when clicking outside.
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        closeMenu();
+        setIsMenuOpen(false);
+        if (onLinkClick) onLinkClick();
       }
     };
 
-    // Handler to close the menu when pressing the Escape key.
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        closeMenu();
-        buttonRef.current?.focus(); // Return focus to the toggle button.
-      }
-    };
-
-    if (open) {
-      document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("keydown", handleKeyDown);
-      // After opening the menu, focus the first item for accessibility.
-      setTimeout(() => firstItemRef.current?.focus(), 50);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleKeyDown);
+    if (menuState) {
+      document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [open]);
+  }, [menuState, onLinkClick]);
 
-  // Add event handlers for hover and click on mobile and desktop
+  // Desktop hover handlers
   const handleMouseEnter = () => {
-    if (!isMobile) setInternalOpen(true);
+    if (!isMobile) {
+      setIsMenuOpen(true);
+    }
   };
 
   const handleMouseLeave = () => {
-    if (!isMobile) setInternalOpen(false);
+    if (!isMobile) {
+      setIsMenuOpen(false);
+    }
   };
 
   return (
     <div
-      className="relative"
       ref={menuRef}
-      onMouseEnter={handleMouseEnter} // Open on hover (except on mobile)
-      onMouseLeave={handleMouseLeave} // Close on mouse leave (except on mobile)
-      onClick={() => isMobile && toggleMenu()} // Toggle on click for mobile
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      {/* Button to toggle the About dropdown */}
       <button
         ref={buttonRef}
-        className="flex items-center space-x-1 hover:text-primary dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
-        aria-expanded={open}
+        onClick={() => isMobile && toggleMenu()}
+        className="flex items-center gap-1 px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary rounded-md transition-colors"
+        aria-expanded={menuState}
         aria-haspopup="true"
-        aria-label="About menu"
       >
         <span>About</span>
-        <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          animate={{ rotate: open ? 180 : 0 }}
+        <motion.div
+          animate={{ rotate: menuState ? 180 : 0 }}
           transition={{ duration: 0.2 }}
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </motion.svg>
+          <ChevronDown className="h-4 w-4" />
+        </motion.div>
       </button>
 
-      {/* AnimatePresence handles the smooth mounting and unmounting animations */}
       <AnimatePresence>
-        {open && (
+        {menuState && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute left-0 mt-2 w-80 rounded-lg bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
-            role="menu"
-            aria-labelledby="about-menu"
+            className={`absolute left-0 mt-2 w-80 rounded-lg bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 ${
+              isMobile ? 'position-static w-full' : ''
+            }`}
           >
             <div className="py-2">
               {menuItems.map((item, index) => (
                 <Link
                   key={index}
                   href={item.path}
-                  className="group flex flex-col px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700"
-                  role="menuitem"
-                  ref={index === 0 ? firstItemRef : null}
-                  onClick={closeMenu}
+                  onClick={handleLinkClick}
+                  className="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                 >
-                  <span className="font-medium text-gray-900 dark:text-white group-hover:text-primary">
+                  <span className="block font-medium text-gray-900 dark:text-white">
                     {item.title}
                   </span>
-                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                  <span className="block mt-1 text-sm text-gray-500 dark:text-gray-400">
                     {item.description}
                   </span>
                 </Link>

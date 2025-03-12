@@ -1,94 +1,119 @@
 import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 
-// Define props interface for DepartmentMenu
 interface DepartmentMenuProps {
-  isOpen: boolean;
-  onLinkClick: () => void;
+  isOpen?: boolean;
+  onLinkClick?: () => void;
+  isMobile?: boolean;
 }
 
-export default function DepartmentMenu({ isOpen, onLinkClick }: DepartmentMenuProps) {
+export default function DepartmentMenu({ isOpen, onLinkClick, isMobile }: DepartmentMenuProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  // Close menu when clicking outside
+  const menuItems = [
+    { title: "Engineering", path: "/departments/engineering", description: "Software and hardware engineering initiatives" },
+    { title: "Technology", path: "/departments/technology", description: "Cutting-edge tech exploration and development" },
+    { title: "Communications", path: "/departments/communications", description: "Digital and traditional communications" },
+    { title: "Community", path: "/departments/community", description: "Community engagement and outreach programs" },
+    { title: "Creatives", path: "/departments/creatives", description: "Creative arts and digital media" }
+  ];
+
+  const menuState = isOpen ?? isMenuOpen;
+
+  const toggleMenu = () => {
+    if (typeof isOpen === 'undefined') {
+      setIsMenuOpen(!isMenuOpen);
+    }
+  };
+
+  const handleLinkClick = () => {
+    if (onLinkClick) {
+      onLinkClick();
+    }
+    setIsMenuOpen(false);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        // Manually trigger the closing via onLinkClick
-        onLinkClick();
+        setIsMenuOpen(false);
+        if (onLinkClick) onLinkClick();
       }
     };
 
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        onLinkClick(); // Close the menu
-        buttonRef.current?.focus(); // Refocus button after closing
-      }
-    };
+    if (menuState) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [onLinkClick]);
+  }, [menuState, onLinkClick]);
+
+  const handleMouseEnter = () => {
+    if (!isMobile) {
+      setIsMenuOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
-    <div className="relative" ref={menuRef}>
-      {/* Toggle Button */}
+    <div
+      ref={menuRef}
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <button
         ref={buttonRef}
-        className="flex items-center space-x-2 hover:text-primary dark:hover:text-blue-400 transition-all duration-300 focus:outline-none"
-        onClick={() => {}}
-        aria-expanded={isOpen}
-        aria-controls="department-menu"
+        onClick={() => isMobile && toggleMenu()}
+        className="flex items-center gap-1 px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary rounded-md transition-colors"
+        aria-expanded={menuState}
+        aria-haspopup="true"
       >
         <span>Departments</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+        <motion.div
+          animate={{ rotate: menuState ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
+          <ChevronDown className="h-4 w-4" />
+        </motion.div>
       </button>
 
-      {/* Animated Dropdown Menu */}
       <AnimatePresence>
-        {isOpen && (
+        {menuState && (
           <motion.div
-            id="department-menu"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 text-black dark:text-white shadow-lg rounded-lg border 
-                       border-gray-200 dark:border-gray-700 z-10 max-h-80 overflow-y-auto"
-            style={{
-              maxHeight: '300px', // Limits height, enabling scrolling
-            }}
+            transition={{ duration: 0.2 }}
+            className={`absolute left-0 mt-2 w-80 rounded-lg bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 ${
+              isMobile ? 'position-static w-full' : ''
+            }`}
           >
-            <div className="py-1" role="menu" aria-orientation="vertical">
-              {[
-                { name: 'Engineering', href: '/departments/engineering' },
-                { name: 'Technology', href: '/departments/technology' },
-                { name: 'Communications', href: '/departments/communications' },
-                { name: 'Community', href: '/departments/community' },
-                { name: 'Creatives', href: '/departments/creatives' },
-              ].map((item) => (
+            <div className="py-2">
+              {menuItems.map((item, index) => (
                 <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block px-4 py-2 text-gray-800 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800 rounded transition-all duration-300"
-                  role="menuitem"
-                  onClick={onLinkClick} // Close menu when clicked
+                  key={index}
+                  href={item.path}
+                  onClick={handleLinkClick}
+                  className="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                 >
-                  {item.name}
+                  <span className="block font-medium text-gray-900 dark:text-white">
+                    {item.title}
+                  </span>
+                  <span className="block mt-1 text-sm text-gray-500 dark:text-gray-400">
+                    {item.description}
+                  </span>
                 </Link>
               ))}
             </div>
