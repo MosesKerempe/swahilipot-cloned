@@ -28,16 +28,23 @@ const Partners = () => {
   };
 
   return (
-    <div className="partners-section py-16 px-4">
-      <h2 className="partners-title text-3xl font-bold text-center mb-12">Our Partners</h2>
+    <div className="partners-section py-16 px-4 bg-gray-900 text-white">
+      <h2 className="partners-title text-3xl font-bold text-center mb-12 text-gray-100">
+        Our Partners
+      </h2>
       <Slider {...sliderSettings} className="partners-slider">
         {partners.map((partner: Partner, index: number) => (
           <div key={index} className="partner-slide flex justify-center">
-            <a href={partner.link} target="_blank" rel="noopener noreferrer">
+            <a
+              href={partner.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="partner-logo w-auto h-20 object-contain mx-auto"
+                className="partner-logo w-auto h-20 object-contain mx-auto transition-transform transform group-hover:scale-105"
               />
             </a>
           </div>
