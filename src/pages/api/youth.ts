@@ -47,14 +47,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: process.env.NEXT_PUBLIC_EMAIL_USER,
+      pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
     },
   });
 
   const mailOptions = {
-    from: process.env.EMAIL_USER, // Use your verified sender email
-    to: process.env.RECIPIENT_EMAIL, // Fixed typo (RECIPENT_EMAIL → RECIPIENT_EMAIL)
+    from: process.env.NEXT_PUBLIC_EMAIL_USER, // Use your verified sender email
+    to: process.env.NEXT_PUBLIC_RECIPIENT_EMAIL, // Fixed typo (RECIPENT_EMAIL → RECIPIENT_EMAIL)
     subject: 'New Youth Form Submission',
     html: `
       <h2>Youth Form Submission</h2>

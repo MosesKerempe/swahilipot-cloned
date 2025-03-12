@@ -18,8 +18,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const transporter = nodemailer.createTransport({
     service: 'Gmail', // Use your email provider here
     auth: {
-      user: process.env.EMAIL_USER,  // Gmail account email (set in .env.local)
-      pass: process.env.EMAIL_PASS,  // Gmail app password or password (set in .env.local)
+      user: process.env.NEXT_PUBLIC_EMAIL_USER,  // Gmail account email (set in .env.local)
+      pass: process.env.NEXT_PUBLIC_EMAIL_PASS,  // Gmail app password or password (set in .env.local)
     },
   });
 
