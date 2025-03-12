@@ -20,30 +20,33 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
-    // Check if user has a saved theme preference
+    // Check if a saved theme preference exists
     const savedTheme = localStorage.getItem('theme') as Theme | null;
-    
-    // Check if user has a system preference
+
+    // Check system preference if no saved theme preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    // Set theme based on saved preference or system preference
+
+    // Set theme based on saved or system preference
     if (savedTheme) {
       setTheme(savedTheme);
     } else if (prefersDark) {
       setTheme('dark');
+    } else {
+      setTheme('light');
     }
   }, []);
 
   useEffect(() => {
-    // Update data-theme attribute on document when theme changes
+    // Update the document's theme by adding the 'data-theme' attribute
     document.documentElement.setAttribute('data-theme', theme);
-    
-    // Save theme preference to localStorage
+
+    // Save the user's theme choice in localStorage
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+  // Toggle the theme between 'light' and 'dark'
   const toggleTheme = () => {
-    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   return (

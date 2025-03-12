@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function FAQS() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  // This would typically come from your data file
+  // FAQ data
   const faqs = [
     {
       question: "What is SwahiliPot Hub?",
@@ -36,11 +36,13 @@ export default function FAQS() {
   };
 
   return (
-    <section className="py-16 bg-gray-900 text-white">
+    <section className="py-16 bg-orange-50 text-white dark:bg-gray-800">
       <div className="container-custom mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-gray-100">Frequently Asked Questions</h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-lg text-gray-900 dark:text-gray-100 max-w-3xl mx-auto">
             Find answers to common questions about SwahiliPot Hub.
           </p>
         </div>
@@ -49,10 +51,10 @@ export default function FAQS() {
           {faqs.map((faq, index) => (
             <div key={index} className="mb-4">
               <button
-                className="flex justify-between items-center w-full p-5 bg-gray-800 rounded-lg hover:bg-blue-600 transition-colors"
+                className="flex justify-between items-center w-full p-5 bg-blue-500 rounded-lg hover:bg-blue-600 dark:bg-gray-800 dark:hover:bg-blue-600 transition-colors"
                 onClick={() => toggleFAQ(index)}
               >
-                <span className="font-semibold text-left text-gray-100">{faq.question}</span>
+                <span className="font-semibold text-left text-gray-100 dark:text-gray-100">{faq.question}</span>
                 <svg
                   className={`w-5 h-5 transition-transform ${openIndex === index ? 'transform rotate-180' : ''}`}
                   fill="none"
@@ -64,8 +66,8 @@ export default function FAQS() {
               </button>
               
               {openIndex === index && (
-                <div className="p-5 border border-blue-500 border-t-0 rounded-b-lg bg-gray-800">
-                  <p className="text-gray-300">{faq.answer}</p>
+                <div className="p-5 border border-blue-500 border-t-0 rounded-b-lg bg-gray-800 dark:bg-gray-700">
+                  <p className="text-gray-300 dark:text-gray-400">{faq.answer}</p>
                 </div>
               )}
             </div>
