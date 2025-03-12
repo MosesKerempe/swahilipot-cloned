@@ -66,8 +66,8 @@ export default function FAQS() {
               </button>
               
               {openIndex === index && (
-                <div className="p-5 border border-blue-500 border-t-0 rounded-b-lg bg-gray-800 dark:bg-gray-700">
-                  <p className="text-gray-300 dark:text-gray-400">{faq.answer}</p>
+                <div className="p-5 border border-blue-500 border-t-0 rounded-b-lg bg-orange-50 dark:bg-gray-700">
+                  <p className="text-gray-900 dark:text-gray-400">{faq.answer}</p>
                 </div>
               )}
             </div>
