@@ -10,17 +10,13 @@ import DonateBtn from './Menus/DonateBtn';
 import YouthDatabase from './Menus/YouthDatabase';
 import MenuCTA from './Menus/MenuCTA';
 import ThemeToggle from '@/components/shared/ThemeToggle';
-
-interface MenuProps {
-  isOpen: boolean;
-  onLinkClick: () => void;
-}
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isMobile, setIsMobile] = useState(false); // To detect mobile
+  const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -28,40 +24,23 @@ export default function Header() {
       setIsScrolled(window.scrollY > 10);
     };
 
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768); // Mobile detection
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
     };
 
+    handleResize(); // Initial check
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', checkScreenSize);
-    
-    checkScreenSize(); // Check initial screen size
+    window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', checkScreenSize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
   const handleLinkClick = () => {
-    setIsMenuOpen(false);  // Close the mobile menu
-    setActiveDropdown(null); // Reset active dropdown when a link is clicked
-  };
-
-  const handleMouseEnter = (menu: string) => {
-    if (!isMobile) {
-      setActiveDropdown(menu);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (!isMobile) {
-      setActiveDropdown(null);
-    }
+    setIsMenuOpen(false);
+    setActiveDropdown(null);
   };
 
   return (
@@ -78,56 +57,25 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {/* About Dropdown */}
-            <div
-              onMouseEnter={() => handleMouseEnter('about')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <AboutMenu
-                isOpen={activeDropdown === 'about'}
-                onLinkClick={handleLinkClick}
-              />
-            </div>
-
-            {/* Department Dropdown */}
-            <div
-              onMouseEnter={() => handleMouseEnter('department')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <DepartmentMenu
-                isOpen={activeDropdown === 'department'}
-                onLinkClick={handleLinkClick}
-              />
-            </div>
-
-            {/* Program Dropdown */}
-            <div
-              onMouseEnter={() => handleMouseEnter('program')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <ProgramMenu
-                isOpen={activeDropdown === 'program'}
-                onLinkClick={handleLinkClick}
-              />
-            </div>
-
-            {/* Other Links */}
+            <AboutMenu isMobile={false} />
+            <DepartmentMenu isMobile={false} />
+            <ProgramMenu isMobile={false} />
+            
             <Link
               href="/adverts"
               className="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors"
-              onClick={handleLinkClick}
             >
               Adverts
             </Link>
             <Link
               href="/spfm"
               className="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors"
-              onClick={handleLinkClick}
             >
               SwahiliPotFM
             </Link>
             <BlogLink onLinkClick={handleLinkClick} />
             <YouthDatabase onLinkClick={handleLinkClick} />
+            
             <div className="flex items-center space-x-4">
               <ThemeToggle />
               <DonateBtn onLinkClick={handleLinkClick} />
@@ -139,59 +87,42 @@ export default function Header() {
           <div className="lg:hidden flex items-center space-x-4">
             <ThemeToggle />
             <button
-              onClick={toggleMenu}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               aria-label="Toggle menu"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={
-                    isMenuOpen
-                      ? 'M6 18L18 6M6 6l12 12'
-                      : 'M4 6h16M4 12h16M4 18h16'
-                  }
-                />
-              </svg>
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </nav>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700 pt-4">
-            <nav className="flex flex-col space-y-4">
-              <div onClick={handleLinkClick}>
-                <AboutMenu isOpen={true} onLinkClick={handleLinkClick} />
-              </div>
-              <div onClick={handleLinkClick}>
-                <DepartmentMenu isOpen={true} onLinkClick={handleLinkClick} />
-              </div>
-              <div onClick={handleLinkClick}>
-                <ProgramMenu isOpen={true} onLinkClick={handleLinkClick} />
-              </div>
+          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700">
+            <nav className="flex flex-col space-y-4 pt-4">
+              <AboutMenu isMobile={true} onLinkClick={handleLinkClick} />
+              <DepartmentMenu isMobile={true} onLinkClick={handleLinkClick} />
+              <ProgramMenu isMobile={true} onLinkClick={handleLinkClick} />
+              
               <Link
                 href="/adverts"
-                className="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="px-3 py-2 hover:text-primary dark:hover:text-blue-400 transition-colors"
                 onClick={handleLinkClick}
               >
                 Adverts
               </Link>
               <Link
                 href="/spfm"
-                className="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors"
+                className="px-3 py-2 hover:text-primary dark:hover:text-blue-400 transition-colors"
                 onClick={handleLinkClick}
               >
                 SwahiliPotFM
               </Link>
+              
               <BlogLink onLinkClick={handleLinkClick} />
               <YouthDatabase onLinkClick={handleLinkClick} />
               <DonateBtn onLinkClick={handleLinkClick} />
