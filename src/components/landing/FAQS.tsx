@@ -36,7 +36,7 @@ export default function FAQS() {
   };
 
   return (
-    <section className="py-16 bg-orange-50 text-white dark:bg-gray-800">
+    <section className="py-16 bg-blue-50 text-white dark:bg-gray-800">
       <div className="container-custom mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">
