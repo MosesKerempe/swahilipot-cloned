@@ -41,4 +41,24 @@ SwahiliPot Hub is dedicated to empowering communities through technology, creati
    git clone https://github.com/ianmuriuki/swahilipot-cloned.git
    cd swahilipot-cloned
 
+2. **install dependencies:**
 
+     npm install
+     This command will install all the packages and dependancies specified in package.json. 
+
+3. **Run the development server:**
+
+      npm run dev
+        Used to start the development server and preview the project locally.
+         The server will start at <https://localhost:3000>, and you can open it in your browser to view the website in development mode
+
+4. **Build for production:**
+     npm run build
+      If you're ready to build the project for production, we use the command to create an optimized production build.
+
+5. **start the production server:**
+
+      npm start
+          After building the app we can start the production server by this command. 
+
+   By following these steps, you will be able to clone, install, and run the SwahiliPot Hub website locally on your machine. Enjoy exploring.
