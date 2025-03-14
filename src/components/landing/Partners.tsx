@@ -28,8 +28,8 @@ const Partners = () => {
   };
 
   return (
-    <div className="partners-section py-16 px-4 bg-gray-900 text-white">
-      <h2 className="partners-title text-3xl font-bold text-center mb-12 text-gray-100">
+    <div className="partners-section py-16 px-4 bg-blue-50 text-white dark:bg-gray-800">
+      <h2 className="partners-title text-3xl font-bold text-center mb-12 text-gray-100 dark:text-gray-100">
         Our Partners
       </h2>
       <Slider {...sliderSettings} className="partners-slider">

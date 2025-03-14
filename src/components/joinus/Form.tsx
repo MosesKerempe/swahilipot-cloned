@@ -74,10 +74,10 @@ export default function Form() {
   ];
 
   return (
-    <section className="py-16 bg-light">
+    <section className="py-16 bg-blue-50">
       <div className="container-custom mx-auto">
         <div className="max-w-3xl mx-auto">
-          <div className="bg-white p-8 rounded-lg shadow-md">
+          <div className="bg-orange-50 p-8 rounded-lg shadow-md">
             <h2 className="text-3xl font-bold mb-6 text-center">Join Our Community</h2>
 
             {isSubmitted ? (

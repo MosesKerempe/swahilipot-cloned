@@ -7,6 +7,7 @@ import { AccessibilityProvider } from '@/components/accesibility/AccessibilityCo
 import AccessibilityButton from '@/components/accesibility/AccessibilityButton';
 import AccessibilityMenu from '@/components/accesibility/AccessibilityMenu';
 
+
 interface LayoutProps {
   children: ReactNode;
   title?: string;
@@ -27,10 +28,6 @@ export default function Layout({
       <AccessibilityProvider>
         <MetaTags title={title} description={description} image={image} />
         <div className="flex flex-col min-h-screen">
-          {/* Skip to main content link */}
-          <a href="#main-content" className="skip-to-main">
-            Skip to main content
-          </a>
 
           <Header />
           <main id="main-content" className="flex-grow">

@@ -23,11 +23,11 @@ export default function SwahilipotPillar() {
   ];
 
   return (
-    <section className="py-16 bg-light">
+    <section className="py-16 bg-orange-50 dark:bg-gray-900">
       <div className="container-custom mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Our Focus Areas</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">Our Focus Areas</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             SwahiliPot Hub's work centers around three key pillars that guide our programs and initiatives.
           </p>
         </div>
@@ -41,9 +41,9 @@ export default function SwahilipotPillar() {
               }`}
             >
               <div className={index % 2 === 1 ? 'order-1 md:order-2' : ''}>
-                <h3 className="text-2xl font-bold mb-4">{pillar.title}</h3>
-                <p className="text-lg text-gray-700 mb-6">{pillar.description}</p>
-                <Link href={pillar.link} className="text-primary font-medium hover:underline">
+                <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">{pillar.title}</h3>
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">{pillar.description}</p>
+                <Link href={pillar.link} className="text-blue-500 dark:text-blue-400 font-medium hover:underline">
                   Learn more →
                 </Link>
               </div>
